@@ -8,8 +8,9 @@ import { useState } from "react";
 
 const navigationItems = [
   { title: "Home", href: "/" },
-  { title: "Knowledge", href: "/knowledge" },
-  { title: "Contact", href: "/contact" },
+  // { title: "Knowledge", href: "/knowledge" },
+  // { title: "Hospitals", href: "/hospitals" },
+  { title: "Contact", href: "/contacts" },
 ];
 
 export const Navbar = () => {
@@ -45,7 +46,7 @@ export const Navbar = () => {
             <Link
               key={item.title}
               href={item.href}
-              className="text-gray-700 hover:text-gray-900 font-medium"
+              className="text-gray-700 hover:text-gray-900 font-[700]"
             >
               {item.title}
             </Link>
