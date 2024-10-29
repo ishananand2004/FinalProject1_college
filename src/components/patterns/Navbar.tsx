@@ -11,7 +11,7 @@ const navigationItems = [
   { title: "Home", href: "/" },
   // { title: "Knowledge", href: "/knowledge" },
   // { title: "Hospitals", href: "/hospitals" },
-  { title: "Contact", href: "/contacts" },
+  { title: "Contact Us", href: "/contacts" },
 ];
 
 export const Navbar = () => {

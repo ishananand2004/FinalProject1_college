@@ -92,7 +92,7 @@ export default function RootLayout({
 
         <div
           id="wrapper"
-          className="fixed top-0 right-0 bottom-0 left-0 overflow-auto"
+          className="fixed top-0 right-0 bottom-0 left-0 overflow-auto flex flex-col justify-between bg-[#F6F7F9]"
         >
           <main className="">{children}</main>
           <Footer {...footerData} />

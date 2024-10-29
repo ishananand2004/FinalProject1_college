@@ -3,7 +3,7 @@ import { HeroMain } from "@/components/patterns/HeroMain";
 export default function Home() {
   return (
     <>
-      <section>
+      <section className="bg-white">
         <HeroMain />
       </section>
     </>
