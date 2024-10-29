@@ -1,6 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 
+
 export const HeroMain = () => (
   <div className="w-full py-24 lg:py-32 bg-no-repeat bg-bottom relative overflow-hidden bg-[#FDFCFE]">
     <div className="container mx-auto">
@@ -23,9 +24,9 @@ export const HeroMain = () => (
         </div>
         <div className="z-10">
           <div className="grid grid-cols-2 gap-8 px-4">
-            <div className="bg-muted rounded-md aspect-square"></div>
-            <div className="bg-muted rounded-md row-span-2"></div>
-            <div className="bg-muted rounded-md aspect-square"></div>
+            <div className="rounded-md aspect-square"></div>
+            <div className="rounded-md row-span-2"></div>
+            <div className="rounded-md aspect-square"></div>
           </div>
         </div>
       </div>
@@ -41,3 +42,4 @@ export const HeroMain = () => (
     </div>
   </div>
 );
+
