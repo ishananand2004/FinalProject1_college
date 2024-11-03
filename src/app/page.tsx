@@ -2,7 +2,6 @@ import LeadGenerationForm from "@/components/forms/LeadGenerationForm";
 import { CarouselLogo } from "@/components/patterns/CarouselLogo";
 import { CTA } from "@/components/patterns/CTA";
 import { HeroMain } from "@/components/patterns/HeroMain";
-<<<<<<< HEAD
 import { Milestones } from "@/components/patterns/Milestones";
 import {
   Feature,
@@ -107,18 +106,13 @@ const partners: ComponentProps<typeof CarouselLogo>["items"] = [
     title: "SIMS hospitals logo",
   },
 ];
-=======
-import LeadGenerationForm from "@/components/forms/LeadGenerationForm";
->>>>>>> 69bd5f4 (Working Leadgeneration form)
 
 export default function Home() {
   return (
     <>
       <section className="bg-background">
         <HeroMain />
-        <div>
         <LeadGenerationForm/>
-        </div>
       </section>
       <div className="container mx-auto ">
         <div className="relative -my-20 z-100 px-4 md:px-8 lg:px-16 py-12 bg-white rounded-lg shadow-lg">
