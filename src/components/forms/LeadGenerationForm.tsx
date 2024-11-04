@@ -89,7 +89,6 @@ export default function LeadGenerationForm() {
                 </FormItem>
               )}
             />
-            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
           </div>
 
           <div className="flex flex-col sm:flex-row sm:space-x-4">
@@ -171,5 +170,5 @@ export default function LeadGenerationForm() {
         </form>
       </Form>
     </div>
-  );
+  )
 }
