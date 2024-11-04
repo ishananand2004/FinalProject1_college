@@ -24,9 +24,9 @@ export const HeroMain = () => (
         </div>
         <div className="z-10">
           <div className="grid grid-cols-2 gap-8 px-4">
-            <div className="rounded-md aspect-square"></div>
-            <div className="rounded-md row-span-2"></div>
-            <div className="rounded-md aspect-square"></div>
+            {/* <div className="bg-muted rounded-md aspect-square"></div>
+            <div className="bg-muted rounded-md row-span-2"></div>
+            <div className="bg-muted rounded-md aspect-square"></div> */}
           </div>
         </div>
       </div>
