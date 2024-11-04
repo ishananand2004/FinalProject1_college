@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 
 
 export const HeroMain = () => (
-  <div className="w-full h-[100vh] py-24 lg:py-32">
+  <div className="w-full h-[150vh] py-24 lg:py-32">
     <div className="container mx-auto">
       <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
         <div>
