@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge";
 
 
 export const HeroMain = () => (
-  <div className="w-full py-24 lg:py-32">
+  <div className="w-full h-[100vh] py-24 lg:py-32">
     <div className="container mx-auto">
       <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2">
         <div>
@@ -37,9 +37,9 @@ export const HeroMain = () => (
         </div>
         <div>
           <div className="grid grid-cols-2 gap-8 px-4">
-            <div className="rounded-md aspect-square"></div>
-            <div className="rounded-md row-span-2"></div>
-            <div className="rounded-md aspect-square"></div>
+            {/* <div className="bg-muted rounded-md aspect-square"></div>
+            <div className="bg-muted rounded-md row-span-2"></div>
+            <div className="bg-muted rounded-md aspect-square"></div> */}
           </div>
         </div>
         <div></div>

@@ -6,9 +6,9 @@ export default function Home() {
     <>
       <section className="bg-white">
         <HeroMain />
-        <div>
+        
         <LeadGenerationForm/>
-        </div>
+        
       </section>
     </>
   );

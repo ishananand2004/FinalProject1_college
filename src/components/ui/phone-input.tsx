@@ -11,7 +11,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"; // Ensure this path is correct
+} from "@/components/ui/command"; 
 
 import { Input, InputProps } from "@/components/ui/input";
 import {
@@ -20,7 +20,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
-import ScrollArea from "@/components/ui/scroll-area";
+import { ScrollArea } from "./scroll-area";
 
 // Define NullableE164Number to allow both E164Number and ""
 type NullableE164Number = RPNInput.Value | "";
@@ -96,7 +96,7 @@ const CountrySelect = ({
         <Button
           type="button"
           variant={"outline"}
-          className={cn("flex gap-1 rounded-e-none rounded-s-lg px-3")}
+          className={cn("flex gap-1 bg-[#efefef] rounded-e-none rounded-s-lg px-3")}
           disabled={disabled}
         >
           <FlagComponent country={value} countryName={value} />
@@ -155,7 +155,7 @@ const FlagComponent = ({ country, countryName }: RPNInput.FlagProps) => {
   const Flag = flags[country];
 
   return (
-    <span className="bg-foreground/20 flex h-4 w-6 overflow-hidden rounded-sm">
+    <span className="flex h-4 w-6 overflow-hidden rounded-sm">
       {Flag && <Flag title={countryName} />}
     </span>
   );
