@@ -2,6 +2,7 @@ import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 
 
+
 export const HeroMain = () => (
   <div className="w-full py-24 lg:py-32 bg-no-repeat bg-bottom relative overflow-hidden bg-[#FDFCFE]">
     <div className="container mx-auto">
