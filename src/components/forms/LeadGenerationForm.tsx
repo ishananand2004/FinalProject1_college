@@ -59,7 +59,7 @@ export default function LeadGenerationForm() {
   })
 
   return (
-    <div className="lg:absolute top-24 right-28 max-w-md mx-auto p-6 border border-pink-300 rounded-3xl shadow-lg bg-white sm:max-w-lg lg:max-w-2xl">
+    <div className="lg:absolute z-10 top-24 right-28 max-w-md mx-auto p-6 border border-pink-300 rounded-3xl shadow-lg bg-white sm:max-w-lg lg:max-w-2xl">
       <h2 className="text-2xl font-bold text-pink-600 mb-6">Need Help? Let's Talk!</h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

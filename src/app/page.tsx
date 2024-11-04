@@ -114,7 +114,7 @@ export default function Home() {
         <HeroMain />
         <LeadGenerationForm/>
       </section>
-      <div className="container mx-auto ">
+      <div className="container mx-auto">
         <div className="relative -my-20 z-100 px-4 md:px-8 lg:px-16 py-12 bg-white rounded-lg shadow-lg">
           <Section>
             <FeatureGrid
@@ -124,7 +124,7 @@ export default function Home() {
             />
           </Section>
           <Section>
-            <div className="flex flex-col  gap-10">
+            <div className="flex flex-col gap-10">
               <h2 className="text-xl md:text-3xl tracking-tighter lg:max-w-xl mx-auto font-bold text-center">
                 Our Partners
               </h2>

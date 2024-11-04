@@ -4,7 +4,7 @@ import Image from "next/image";
 
 
 export const HeroMain = () => (
-  <div className="w-full h-[160vh] z-4 py-24 lg:py-32 bg-no-repeat bg-bottom relative overflow-hidden bg-[#FDFCFE]">
+  <div className="w-full py-24 lg:py-32 bg-no-repeat bg-bottom relative overflow-hidden bg-[#FDFCFE]">
     <div className="container mx-auto">
       <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2 relative z-2">
         <div className="z-10 lg:pb-20">
