@@ -1,11 +1,12 @@
 import Link from "next/link";
 import React from "react";
+import { Icon, IconName } from "../ui/icon";
 
 // Define interfaces for the navigation items and footer props
 interface SubItem {
   title: string;
   href: string;
-  icon?: any | null; // Optional icon
+  icon?: IconName; // Optional icon
 }
 
 interface NavigationItem {
@@ -14,7 +15,7 @@ interface NavigationItem {
   items?: SubItem[];
 }
 
-interface FooterProps {
+export interface FooterProps {
   title: string;
   description: string;
   navigationItems: NavigationItem[];
@@ -62,7 +63,10 @@ export const Footer: React.FC<FooterProps> = ({
                           className="group flex items-center gap-2 transition-all ease-in-out"
                         >
                           {subItem.icon && (
-                            <subItem.icon className="w-4 h-4 text-background/75 group-hover:text-white" />
+                            <Icon
+                              {...subItem.icon}
+                              className="w-4 h-4 text-background/75 group-hover:text-white"
+                            />
                           )}{" "}
                           {/* Render the icon if available */}
                           <span className="text-background/75 group-hover:text-white">

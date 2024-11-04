@@ -1,9 +1,8 @@
+import { Footer, FooterProps } from "@/components/patterns/Footer";
 import { Navbar } from "@/components/patterns/Navbar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { Footer } from "@/components/patterns/Footer";
-import { Home, IconNode, Mail, Phone } from "lucide-react"; // Example icons from lucide-react
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,7 +21,7 @@ export const metadata: Metadata = {
     "TRUSTED MEDICAL PARTNER IN INDIA Your Health Our Priority Guiding You Every Step Need Help? Lets Talk! WHAT WE DO? Our unique process makes your Medical Journey Smooth. Visa Support Assistance with visa applications and documentation to ensure a smooth travel process Local Accomodation Arrangement of comfortable and convenient lodging near medical facilities. Treatment Coordination",
 };
 
-const navigationItems = [
+const navigationItems: FooterProps["navigationItems"] = [
   {
     title: "Need Help?",
     items: [
@@ -39,12 +38,10 @@ const navigationItems = [
       {
         title: "Terms and Conditions",
         href: "/terms-and-conditions",
-        icon: null, // No icon
       },
       {
         title: "Privacy Policy",
         href: "/privacy-policy",
-        icon: null, // No icon
       },
     ],
   },
@@ -55,23 +52,23 @@ const navigationItems = [
       {
         title: "admin@caremedico.com",
         href: "mailto:admin@caremedico.com",
-        icon: Mail, // Add the icon
+        icon: { provider: "lucide", name: "Mail" }, // Add the icon
       },
       {
         title: "+918130600627",
         href: "tel:+918130600627",
-        icon: Phone, // Add the icon
+        icon: { provider: "lucide", name: "Phone" }, // Add the icon
       },
       {
         title: "+918130600628",
         href: "tel:+918130600628",
-        icon: Phone, // Add the icon
+        icon: { provider: "lucide", name: "Phone" }, // Add the icon
       },
     ],
   },
 ];
 
-const footerData = {
+const footerData: FooterProps = {
   title: "Join the Community",
   description:
     "We are trusted by over 5000+ patients. Join us for full support.",
