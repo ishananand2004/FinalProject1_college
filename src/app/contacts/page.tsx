@@ -1,16 +1,11 @@
 "use client";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
 // import { PhoneInput } from "@/components/ui/phoneInput"
-import { Link } from "lucide-react";
-import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { PhoneInput } from "@/components/ui/phone-input";
+import { LeadGenerationForm } from "../../components/forms/LeadGenerationForm";
+import Image from "next/image";
 // (props) ye tha important h
 export default function Contacts() {
   return (
@@ -31,21 +26,27 @@ export default function Contacts() {
 
       <div className="p-10 mt-[7%] flex gap-[8%] ">
         <div className="flex gap-7">
-          <img
+          <Image
             className="w-[23vw] translate-y-[18%] h-[40vh] object-cover shrink-0 rounded-lg"
-            src="https://caremedico.com/wp-content/uploads/2022/09/services_img_hs5.jpg"
-            alt=""
+            src="/images/contact_us_we_are_here_for_you.webp"
+            alt="Services Image"
+            width={500}
+            height={500}
           />
           <div className="flex flex-col">
             <div className="w-[15vw] h-[25vh] bg-blue-100 flex items-center justify-center flex-col rounded-lg">
               <h1 className="font-bold text-4xl text-gray-600">5000+</h1>
-              <h1 className="mt-1 text-xl text-gray-600">Satisfied Customers</h1>
+              <h1 className="mt-1 text-xl text-gray-600">
+                Satisfied Customers
+              </h1>
             </div>
             <div className="mt-7">
-              <img
+              <Image
                 className="w-[26vw] h-[30vh] object-cover shrink-0 rounded-lg"
-                src="https://caremedico.com/wp-content/uploads/2022/09/services_img_hs6.jpg"
-                alt=""
+                src="/images/our_team.webp"
+                alt="Services"
+                width={500}
+                height={500}
               />
             </div>
           </div>
@@ -53,7 +54,7 @@ export default function Contacts() {
 
         <div>
           <h1 className="font-bold  text-4xl text-pink-500">
-            Convinced yet? Let's make{" "}
+            Convinced yet? Let&apos;s make{" "}
           </h1>
           <h1 className="font-bold  text-4xl text-pink-500 mt-2">
             something great together.
@@ -100,70 +101,7 @@ export default function Contacts() {
           </h1>
 
           <div className="w-[80vw] mt-5 mb-[6%] mx-auto p-6 border-none  sm:max-w-lg lg:max-w-2xl">
-            <form className="space-y-4">
-              <div className="flex flex-col sm:flex-row sm:space-x-4">
-                <div className="flex-1">
-                  <Label htmlFor="name">Name *</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="E.g. John Doe"
-                    required
-                  />
-                </div>
-                <div className="flex-1 mt-4 sm:mt-0">
-                  <Label htmlFor="location">Preferred Treatment Location</Label>
-                  <Input id="location" type="text" placeholder="Bengaluru" />
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row sm:space-x-4">
-                <div className="flex-1">
-                  <Label htmlFor="email">Email Address *</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="E.g. john@doe.com"
-                    required
-                  />
-                </div>
-                <div className="flex-1 mt-4 sm:mt-0">
-                  <Label htmlFor="phone">Phone *</Label>
-                  <PhoneInput
-                    id="phone"
-                    defaultCountry="IN"
-                    className="w-full"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <Label htmlFor="medicalIssue">Medical Issue</Label>
-                <Textarea
-                  id="medicalIssue"
-                  placeholder="Medical Issue"
-                  className="h-32 bg-gray-200"
-                />
-              </div>
-
-              <div>
-                <Label htmlFor="reports">Reports</Label>
-                <div className="flex items-center justify-center border-transparent rounded-md bg-gray-200 h-28 p-4 text-gray-500">
-                  <span className="mr-2">Drag and Drop (or)</span>
-                  <a href="#" className="text-sky-400 hover:underline">
-                    Choose Files
-                  </a>
-                </div>
-              </div>
-
-              <Button
-                type="submit"
-                className="w-40 bg-rose-600 hover:bg-rose-700 text-white"
-              >
-                Consult Now for Free
-              </Button>
-            </form>
+            <LeadGenerationForm />
           </div>
         </div>
       </div>
