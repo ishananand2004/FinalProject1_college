@@ -11,7 +11,7 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/components/ui/command"; 
+} from "@/components/ui/command";
 
 import { Input, InputProps } from "@/components/ui/input";
 import {
