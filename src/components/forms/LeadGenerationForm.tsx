@@ -75,14 +75,14 @@ export default function LeadGenerationForm() {
               control={form.control}
               name="name"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex-1">
                   <FormLabel>Name *</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="E.g. John Doe"
                       {...field}
                       required
-                      className="bg-[#efefef] w-[17vw] "
+                      className="bg-[#efefef]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -93,13 +93,13 @@ export default function LeadGenerationForm() {
               control={form.control}
               name="location"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex-1">
                   <FormLabel>Preferred Treatment Location</FormLabel>
                   <FormControl>
                     <Input
                       placeholder="Bengaluru"
                       {...field}
-                      className="bg-[#efefef] w-[17vw] "
+                      className="bg-[#efefef]"
                     />
                   </FormControl>
                 </FormItem>
@@ -112,7 +112,7 @@ export default function LeadGenerationForm() {
               control={form.control}
               name="email"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex-1">
                   <FormLabel>Email Address *</FormLabel>
                   <FormControl>
                     <Input
@@ -120,7 +120,7 @@ export default function LeadGenerationForm() {
                       placeholder="E.g. john@doe.com"
                       {...field}
                       required
-                      className="bg-[#efefef] w-[17vw] "
+                      className="bg-[#efefef]"
                     />
                   </FormControl>
                   <FormMessage />
@@ -131,7 +131,7 @@ export default function LeadGenerationForm() {
               control={form.control}
               name="phone"
               render={({ field }) => (
-                <FormItem>
+                <FormItem className="flex-1">
                   <FormLabel>Phone *</FormLabel>
                   <FormControl>
                     <PhoneInput
