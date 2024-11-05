@@ -66,7 +66,7 @@ export default function LeadGenerationForm() {
   return (
     <div className="max-w-md mx-auto p-6 border border-pink-300 rounded-3xl shadow-lg bg-white sm:max-w-lg lg:max-w-2xl">
       <h2 className="text-2xl font-bold text-pink-600 mb-6">
-        Need Help? Let's Talk!
+        Need Help? Let&apos;s Talk!
       </h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -136,7 +136,7 @@ export default function LeadGenerationForm() {
                   <FormControl>
                     <PhoneInput
                       {...field}
-                      defaultCountry="IN"
+                      defaultCountry="BD"
                       className="w-full bg-[#efefef] rounded-md"
                       required
                     />
