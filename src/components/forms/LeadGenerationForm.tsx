@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -23,13 +23,15 @@ const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   location: z.string().optional(),
   email: z.string().email({ message: "Please enter a valid email address." }),
-  phone: z.string().min(10, { message: "Phone number must be at least 10 digits." }),
+  phone: z
+    .string()
+    .min(10, { message: "Phone number must be at least 10 digits." }),
   medicalIssue: z.string().optional(),
   files: z.array(z.instanceof(File)).optional(), // Specify array of File instances
-})
+});
 
 // Define TypeScript type for the form data
-type FormData = z.infer<typeof formSchema>
+type FormData = z.infer<typeof formSchema>;
 
 export default function LeadGenerationForm() {
   const form = useForm<FormData>({
@@ -42,25 +44,30 @@ export default function LeadGenerationForm() {
       medicalIssue: "",
       files: [], // Initialize files as an empty array
     },
-  })
+  });
 
   const onSubmit = (data: FormData) => {
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   const onDrop = (acceptedFiles: File[]) => {
-    form.setValue("files", acceptedFiles as FormData["files"]) // Update files state with explicit typing
-    console.log('Files dropped:', acceptedFiles)
-  }
+    form.setValue("files", acceptedFiles as FormData["files"]); // Update files state with explicit typing
+    console.log("Files dropped:", acceptedFiles);
+  };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: { 'application/pdf': ['.pdf'], 'image/*': ['.jpg', '.jpeg', '.png'] },
-  })
+    accept: {
+      "application/pdf": [".pdf"],
+      "image/*": [".jpg", ".jpeg", ".png"],
+    },
+  });
 
   return (
-    <div className="lg:absolute z-10 top-24 right-28 max-w-md mx-auto p-6 border border-pink-300 rounded-3xl shadow-lg bg-white sm:max-w-lg lg:max-w-2xl">
-      <h2 className="text-2xl font-bold text-pink-600 mb-6">Need Help? Let's Talk!</h2>
+    <div className="max-w-md mx-auto p-6 border border-pink-300 rounded-3xl shadow-lg bg-white sm:max-w-lg lg:max-w-2xl">
+      <h2 className="text-2xl font-bold text-pink-600 mb-6">
+        Need Help? Let's Talk!
+      </h2>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
           <div className="flex flex-col sm:flex-row sm:space-x-4">
@@ -71,7 +78,12 @@ export default function LeadGenerationForm() {
                 <FormItem>
                   <FormLabel>Name *</FormLabel>
                   <FormControl>
-                    <Input placeholder="E.g. John Doe" {...field} required className="bg-[#efefef] w-[17vw] "/>
+                    <Input
+                      placeholder="E.g. John Doe"
+                      {...field}
+                      required
+                      className="bg-[#efefef] w-[17vw] "
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -84,7 +96,11 @@ export default function LeadGenerationForm() {
                 <FormItem>
                   <FormLabel>Preferred Treatment Location</FormLabel>
                   <FormControl>
-                    <Input placeholder="Bengaluru" {...field} className="bg-[#efefef] w-[17vw] "/>
+                    <Input
+                      placeholder="Bengaluru"
+                      {...field}
+                      className="bg-[#efefef] w-[17vw] "
+                    />
                   </FormControl>
                 </FormItem>
               )}
@@ -99,7 +115,13 @@ export default function LeadGenerationForm() {
                 <FormItem>
                   <FormLabel>Email Address *</FormLabel>
                   <FormControl>
-                    <Input type="email" placeholder="E.g. john@doe.com" {...field} required className="bg-[#efefef] w-[17vw] "/>
+                    <Input
+                      type="email"
+                      placeholder="E.g. john@doe.com"
+                      {...field}
+                      required
+                      className="bg-[#efefef] w-[17vw] "
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -132,7 +154,11 @@ export default function LeadGenerationForm() {
               <FormItem>
                 <FormLabel>Medical Issue</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Medical Issue" className="h-32 bg-[#efefef] resize-none" {...field} />
+                  <Textarea
+                    placeholder="Medical Issue"
+                    className="h-32 bg-[#efefef] resize-none"
+                    {...field}
+                  />
                 </FormControl>
               </FormItem>
             )}
@@ -155,7 +181,13 @@ export default function LeadGenerationForm() {
                     {isDragActive ? (
                       <p className="text-rose-600">Drop the files here...</p>
                     ) : (
-                      <p>Drag and Drop (or <span className="text-sky-400 hover:underline cursor-pointer">Choose Files</span>)</p>
+                      <p>
+                        Drag and Drop (or{" "}
+                        <span className="text-sky-400 hover:underline cursor-pointer">
+                          Choose Files
+                        </span>
+                        )
+                      </p>
                     )}
                   </div>
                 </FormControl>
@@ -164,11 +196,14 @@ export default function LeadGenerationForm() {
             )}
           />
 
-          <Button type="submit" className="w-40 bg-rose-600 hover:bg-rose-700 text-white">
+          <Button
+            type="submit"
+            className="w-40 bg-rose-600 hover:bg-rose-700 text-white"
+          >
             Consult Now for Free
           </Button>
         </form>
       </Form>
     </div>
-  )
+  );
 }

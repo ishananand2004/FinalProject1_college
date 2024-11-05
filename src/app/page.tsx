@@ -112,7 +112,6 @@ export default function Home() {
     <>
       <section className="bg-background">
         <HeroMain />
-        <LeadGenerationForm/>
       </section>
       <div className="container mx-auto">
         <div className="relative -my-20 z-100 px-4 md:px-8 lg:px-16 py-12 bg-white rounded-lg shadow-lg">

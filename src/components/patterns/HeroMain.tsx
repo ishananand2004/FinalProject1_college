@@ -1,10 +1,9 @@
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
-
-
+import LeadGenerationForm from "../forms/LeadGenerationForm";
 
 export const HeroMain = () => (
-  <div className="w-full h-[150vh] py-24 lg:py-32 bg-no-repeat bg-bottom relative overflow-hidden bg-[#FDFCFE]">
+  <div className="w-full py-24 lg:py-32 bg-no-repeat bg-bottom relative overflow-hidden bg-[#FDFCFE]">
     <div className="container mx-auto">
       <div className="grid grid-cols-1 gap-8 items-center md:grid-cols-2 relative z-2">
         <div className="z-10 lg:pb-20">
@@ -24,11 +23,7 @@ export const HeroMain = () => (
           </div>
         </div>
         <div className="z-10">
-          <div className="grid grid-cols-2 gap-8 px-4">
-            {/* <div className="bg-muted rounded-md aspect-square"></div>
-            <div className="bg-muted rounded-md row-span-2"></div>
-            <div className="bg-muted rounded-md aspect-square"></div> */}
-          </div>
+          <LeadGenerationForm />
         </div>
       </div>
       <div className="hidden md:block w-full absolute -bottom-60 left-0 right-0 -z-0">
@@ -43,4 +38,3 @@ export const HeroMain = () => (
     </div>
   </div>
 );
-
