@@ -10,7 +10,7 @@ export default function DoctorProfile() {
       {/* Main Flex Container */}
       <div className="flex flex-col lg:flex-row gap-6 items-start">
         {/* Profile Section */}
-        <div className="flex flex-row w-full lg:w-2/3 items-start">
+        <div className="flex sm:flex-col lg:flex-row w-full lg:w-2/3 items-start">
           {/* Image */}
           <img 
             src="/images/image.webp" 
@@ -51,7 +51,7 @@ export default function DoctorProfile() {
             <CardTitle>About Dr. Devi Prasad Shetty</CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="space-y-3 text-gray-700">
+            <ul className="space-y-4 text-gray-700">
               {[
                 "Dr. Devi Prasad Shetty is one of the most renowned Cardiothoracic Surgeon in Bangalore.",
                 "Dr. Shetty has been awarded 'Padma Shri', the fourth highest civilian award in India and 'Padma Bhushan', the third-highest civilian award by the Government of India for his contribution to healthcare.",
@@ -60,7 +60,11 @@ export default function DoctorProfile() {
                 "Dr. Shetty has performed Asia’s first dynamic cardiomyoplasty operation to strengthen the weak heart muscle using the chest wall muscle.",
                 "He is one of the few surgeons in the world to use a microchip camera to perform a keyhole heart surgery.",
                 "For the first time in India, he has used a left ventricular assist device to temporarily support a failing heart.",
-                "Dr. Devi Prasad Shetty is counted among one of the most experienced doctors in the world in performing a bypass-grafting operation on a beating heart."
+                "Dr. Devi Prasad Shetty is counted among one of the most experienced doctors in the world in performing a bypass-grafting operation on a beating heart.",
+                "In 1990, he became the first surgeon in India to venture into Neonatal open heart surgery by performing open-heart surgery on a 9-day-old baby.",
+                "Dr. Shetty has won several awards for his contribution to both Medical Science and Public Welfare.",
+                " Dr. Devi Prasad Shetty is the founder of the multi-speciality hospital Narayana Hrudayalaya, Bangalore and Rabindranath Tagore International Institute of Cardiac Sciences (RTIICS) Kolkata.",
+                "Dr. Devi Prasad Shetty has expertise in Paediatric Cardiac Surgery."
               ].map((text, index) => (
                 <li key={index} className="flex items-start">
                   <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
@@ -68,8 +72,45 @@ export default function DoctorProfile() {
                 </li>
               ))}
             </ul>
+            
+            {/* Special Interests Section */}
+            <div className="mt-6 space-y-4">
+              <h3 className="text-lg font-semibold text-gray-700">Special Interests</h3>
+              <p>Dr. Devi Prasad Shetty Specializes in the following: </p>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <Badge variant="outline" className="bg-blue-100 text-blue-600">Cardiothoracic Surgery</Badge>
+                <Badge variant="outline" className="bg-blue-100 text-blue-600">Pediatric Cardiac Surgery</Badge>
+                <Badge variant="outline" className="bg-blue-100 text-blue-600">Cardiovascular Surgery</Badge>
+                <Badge variant="outline" className="bg-blue-100 text-blue-600">CABG</Badge>
+              </div>
+            </div>
+          </CardContent>         
+        </Card>
+        <div className="mt-6 w-full">
+        <Card>
+          <CardContent>
+          <div className="mt-6">
+              <h3 className="text-lg font-semibold text-gray-700">Skilled At</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 text-gray-700">
+                {[
+                  "ASD (Atrial Septal Defect) Closure",
+                  "AICD",
+                  "Heart Bypass Surgery (CABG)",
+                  "FRCS",
+                  "PPI - Permanent Pacemaker Implant - Double Chamber",
+                  "CRT- D Implant (Cardiac Resynchronization Therapy)",
+                  "Valve Replacement"
+                ].map((skill, index) => (
+                  <div key={index} className="flex items-start">
+                    <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                    <span>{skill}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </CardContent>
         </Card>
+        </div>       
       </div>
     </div>
   );
