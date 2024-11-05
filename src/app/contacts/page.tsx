@@ -6,6 +6,7 @@ import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { LeadGenerationForm } from "../../components/forms/LeadGenerationForm";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 // (props) ye tha important h
 export default function Contacts() {
   return (
@@ -22,6 +23,13 @@ export default function Contacts() {
             <h1 className="text-gray-600">Contact</h1>
           </div>
         </div>
+
+        <div
+          className={cn(
+            "absolute bottom-0 left-0 right-0 w-full h-14 bg-[#F6F7F9]"
+          )}
+          style={{ clipPath: `polygon(100% 0%, 0% 100%, 100% 100%)` }}
+        ></div>
       </div>
 
       <div className="p-10 mt-[7%] flex gap-[8%] ">
