@@ -19,7 +19,7 @@ export const Navbar = () => {
 
   return (
     <StickyNavbar>
-      <header className="w-full z-40 fixed top-0 left-0 bg-transparent shadow-md">
+      <header className="w-full z-40 fixed top-0 left-0 bg-white shadow-md">
         <div className="container mx-auto flex items-center justify-between px-4 py-2">
           {/* Logo */}
           <div className="flex items-center">
