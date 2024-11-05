@@ -76,7 +76,9 @@ export default function LeadGenerationForm() {
               name="name"
               render={({ field }) => (
                 <FormItem className="flex-1">
-                  <FormLabel>Name *</FormLabel>
+                  <FormLabel>
+                    Name<sup className="text-destructive">*</sup>
+                  </FormLabel>
                   <FormControl>
                     <Input
                       placeholder="E.g. John Doe"
@@ -113,7 +115,9 @@ export default function LeadGenerationForm() {
               name="email"
               render={({ field }) => (
                 <FormItem className="flex-1">
-                  <FormLabel>Email Address *</FormLabel>
+                  <FormLabel>
+                    Email Address<sup className="text-destructive">*</sup>
+                  </FormLabel>
                   <FormControl>
                     <Input
                       type="email"
@@ -132,7 +136,9 @@ export default function LeadGenerationForm() {
               name="phone"
               render={({ field }) => (
                 <FormItem className="flex-1">
-                  <FormLabel>Phone *</FormLabel>
+                  <FormLabel>
+                    Phone<sup className="text-destructive">*</sup>
+                  </FormLabel>
                   <FormControl>
                     <PhoneInput
                       {...field}
