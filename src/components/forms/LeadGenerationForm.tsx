@@ -1,14 +1,11 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import { useDropzone } from "react-dropzone";
+import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { PhoneInput } from "@/components/ui/phone-input";
 import {
   Form,
   FormControl,
@@ -17,6 +14,9 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { PhoneInput } from "@/components/ui/phone-input";
+import { Textarea } from "@/components/ui/textarea";
 
 // Define schema with zod
 const formSchema = z.object({
@@ -169,7 +169,7 @@ export function LeadGenerationForm() {
         <FormField
           control={form.control}
           name="files"
-          render={({ field }) => (
+          render={() => (
             <FormItem>
               <FormLabel>Reports</FormLabel>
               <FormControl>

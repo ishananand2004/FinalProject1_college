@@ -1,13 +1,9 @@
-"use client";
-import React from "react";
 import { Section } from "@/components/ui/section";
+import Link from "next/link";
 import { Button } from "../ui/button";
 import { Icon } from "../ui/icon";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
 
 export function CTA() {
-  const router = useRouter();
   return (
     <Section
       style={{ backgroundImage: `url(${"/images/caremedico-bg-map.webp"})` }}
