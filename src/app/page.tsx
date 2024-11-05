@@ -1,4 +1,3 @@
-import LeadGenerationForm from "@/components/forms/LeadGenerationForm";
 import { CarouselLogo } from "@/components/patterns/CarouselLogo";
 import { CTA } from "@/components/patterns/CTA";
 import { HeroMain } from "@/components/patterns/HeroMain";

@@ -4,7 +4,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { LeadGenerationForm } from "../../components/forms/LeadGenerationForm";
+import { LeadGenerationForm } from "@/components/forms/LeadGenerationForm";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 // (props) ye tha important h
