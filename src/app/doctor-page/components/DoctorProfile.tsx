@@ -108,10 +108,12 @@ export default function DoctorProfile() {
 
       <div className="mt-6 w-full">
         <Card>
-          <CardHeader>
-            <CardTitle>Skilled At</CardTitle>
-          </CardHeader>
           <CardContent>
+            <div className="mt-6">
+            <Button className="text-sm cursor-pointer hover:scale-95 font-semibold text-white inline-block px-3 py-1">
+                  Skilled At
+                </Button>
+              <hr className="mt-2 bg-[#9e9e9e]" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2 text-gray-700">
               {[
                 "ASD (Atrial Septal Defect) Closure",
@@ -128,16 +130,20 @@ export default function DoctorProfile() {
                 </div>
               ))}
             </div>
+            </div>
+          
           </CardContent>
         </Card>
       </div>
 
       <div className="mt-6 w-full">
         <Card>
-          <CardHeader>
-            <CardTitle>Location</CardTitle>
-          </CardHeader>
           <CardContent>
+            <div className="mt-6">
+            <Button className="text-sm cursor-pointer hover:scale-95 font-semibold text-white inline-block px-3 py-1">
+                  Location
+                </Button>
+              <hr className="mt-2 bg-[#9e9e9e]" />
             <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mt-4">
               {/* Hospital Image */}
               <img 
@@ -158,6 +164,7 @@ export default function DoctorProfile() {
                 </div>
                 <p className="text-gray-600 ml-10 mt-6">Bangalore, India</p>
               </a>
+            </div>
             </div>
           </CardContent>
         </Card>
@@ -190,7 +197,9 @@ export default function DoctorProfile() {
                 >
                   Work Experience
                 </Button>
+                
               </div>
+              <hr className="mt-2 bg-[#9e9e9e]" />
 
               {/* Conditional Content Rendering */}
               <div className="mt-4 space-y-3">
