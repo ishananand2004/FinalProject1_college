@@ -1,8 +1,9 @@
 "use client";
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import DoctorProfile from "./components/DoctorProfile";
+// import { Icon } from "@/components/ui/icon";
 
 export default function NewPage() {
   const [isMounted, setIsMounted] = useState(false);
@@ -20,9 +21,11 @@ export default function NewPage() {
          <DoctorProfile/>
       </div>
       
-      <div className="flex justify-center mb-10">
-              <Button onClick={() => router.push("/")}>Go Back Home</Button>
-          </div>
+      {/* <div className="flex justify-center mb-10">
+              <Button onClick={() => router.push("/")}>
+              <Icon provider="phosphor" name="House" className="w-5 h-5 mr-2" />
+                Go Back Home</Button>
+          </div> */}
     </>
   );
 }
