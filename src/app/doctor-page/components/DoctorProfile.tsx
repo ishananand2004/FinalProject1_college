@@ -199,7 +199,7 @@ export default function DoctorProfile() {
                 </Button>
                 
               </div>
-              <hr className="mt-2 bg-[#9e9e9e]" />
+              
 
               {/* Conditional Content Rendering */}
               <div className="mt-4 space-y-3">

@@ -17,6 +17,12 @@
           "text-wrap"
         ]
       }
+    ],
+    "axe/structure": [
+      "default",
+      {
+        "listitem": "off"
+      }
     ]
   }
 }
