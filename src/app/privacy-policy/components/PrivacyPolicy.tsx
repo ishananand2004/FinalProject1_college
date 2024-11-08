@@ -327,15 +327,7 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700 text-sm mb-4">
           Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please fill out and submit a <a href="https://app.termly.io/notify/08851de6-0a18-427f-bfaf-dd1a88bccbed" className="text-blue-600">data subject access request</a>.
           </p>
-
-          
-
-
-
-
-      </div>
-       
-    </div>
-    
+      </div>     
+    </div>    
   );
 }
