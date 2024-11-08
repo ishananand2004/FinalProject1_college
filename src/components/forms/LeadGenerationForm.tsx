@@ -1,9 +1,5 @@
+// components/LeadGenerationForm.tsx
 "use client";
-
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useDropzone } from "react-dropzone";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -17,6 +13,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Textarea } from "@/components/ui/textarea";
+import { useFileUpload } from "@/hooks/useFileUpload"; // Import the custom hook
+import { cn } from "@/lib/utils";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useDropzone } from "react-dropzone";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Icon } from "../ui/icon";
 
 // Define schema with zod
 const formSchema = z.object({
@@ -46,14 +49,7 @@ export function LeadGenerationForm() {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
-  };
-
-  const onDrop = (acceptedFiles: File[]) => {
-    form.setValue("files", acceptedFiles as FormData["files"]); // Update files state with explicit typing
-    console.log("Files dropped:", acceptedFiles);
-  };
+  const { uploading, fileUrls, uploadStatus, onDrop } = useFileUpload(); // Use the custom hook for file upload
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -62,6 +58,38 @@ export function LeadGenerationForm() {
       "image/*": [".jpg", ".jpeg", ".png"],
     },
   });
+
+  const onSubmit = (data: FormData) => {
+    // Send the form data with only the uploaded file URLs
+    const leadData = {
+      ...data,
+      files: fileUrls.map((file) => file.url), // Attach only the URLs of uploaded files
+    };
+
+    console.log("Form data submitted:", leadData);
+
+    // Here you can submit the `leadData` to your server or backend endpoint
+    // For example, using a mutation or API call:
+    // await leadMutation.mutateAsync(leadData);
+  };
+
+  const filesEl = Object.entries(uploadStatus).map(
+    ([fileName, status]: [string, "uploading" | "success" | "failed"]) => (
+      <li
+        className="flex justify-between bg-input rounded-sm p-2 gap-2"
+        key={fileName}
+      >
+        <span className=" text-xs ">{fileName}</span>
+
+        {
+          status === "uploading" ? (
+            <Icon provider="phosphor" name="Spinner" className="animate-spin" />
+          ) : null
+          // <Icon provider="phosphor" name="X" />
+        }
+      </li>
+    )
+  );
 
   return (
     <Form {...form}>
@@ -175,25 +203,21 @@ export function LeadGenerationForm() {
               <FormControl>
                 <div
                   {...getRootProps()}
-                  className={`flex items-center justify-center border rounded-md bg-[#efefef] h-28 p-4 text-gray-500 ${
+                  className={cn(
+                    `flex flex-col items-center justify-center border rounded-md bg-[#efefef] min-h-28 p-4 text-gray-500 cursor-pointer`,
                     isDragActive ? "border-pink-500" : "border-transparent"
-                  }`}
+                  )}
                 >
                   <input {...getInputProps()} id="reports" />
-                  {isDragActive ? (
-                    <p className="text-rose-600">Drop the files here...</p>
-                  ) : (
-                    <p>
-                      Drag and Drop (or{" "}
-                      <span className="text-sky-400 hover:underline cursor-pointer">
-                        Choose Files
-                      </span>
-                      )
-                    </p>
-                  )}
+                  <p className="text-sm text-text/30 text-center pt-8">
+                    Drag and drop a file here or click to select file locally.
+                  </p>
                 </div>
               </FormControl>
               <FormMessage />
+              <ul className="flex flex-wrap gap-2 justify-center items-center mt-auto">
+                {filesEl}
+              </ul>
             </FormItem>
           )}
         />
@@ -201,8 +225,9 @@ export function LeadGenerationForm() {
         <Button
           type="submit"
           className="w-40 bg-rose-600 hover:bg-rose-700 text-white"
+          disabled={uploading || fileUrls.length === 0} // Disable until uploads are complete
         >
-          Consult Now for Free
+          {uploading ? "Uploading..." : "Consult Now for Free"}
         </Button>
       </form>
     </Form>
