@@ -49,8 +49,12 @@ export async function POST(request: NextRequest) {
           })
         );
 
+        console.log("uploadResponse", uploadResponse);
+
+        let sanitizedFileName = encodeURIComponent(file.name);
+        sanitizedFileName = sanitizedFileName.replace(/%20/g, "+");
         // Generate the file URL (this assumes your S3 bucket is publicly accessible)
-        const fileUrl = `https://${Bucket}.s3.${process.env.NEXT_AWS_S3_REGION}.amazonaws.com/${file.name}`;
+        const fileUrl = `https://${Bucket}.s3.${process.env.NEXT_AWS_S3_REGION}.amazonaws.com/${sanitizedFileName}`;
 
         return {
           name: file.name,
