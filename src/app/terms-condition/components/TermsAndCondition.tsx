@@ -7,19 +7,19 @@ export function TermsAndConditions() {
       {/* Sidebar */}
       <aside className="w-full md:w-1/4 lg:w-1/5 px-4 py-6 md:py-8 sticky top-0 md:mt-32 bg-white md:bg-transparent md:border-transparent md:ml-20 border-gray-200 shadow-md md:shadow-none">
         <nav className="space-y-4 text-gray-700">
-          <a href="#" className="block hover:text-blue-600">1. Terms & Conditions</a>
-          <a href="#" className="block hover:text-blue-600">2. Privacy Policy</a>
-          <a href="#" className="block hover:text-blue-600">3. User Policy</a>
-          <a href="#" className="block hover:text-blue-600">4. Copyrights</a>
-          <a href="#" className="block hover:text-blue-600">5. Cookies</a>
-          <a href="#" className="block hover:text-blue-600">6. Account & Billing</a>
+          <a href="#terms" className="block hover:text-blue-600">1. Terms & Conditions</a>
+          <a href="#privacy" className="block hover:text-blue-600">2. Privacy Policy</a>
+          <a href="#userpolicy" className="block hover:text-blue-600">3. User Policy</a>
+          <a href="#copyright" className="block hover:text-blue-600">4. Copyrights</a>
+          <a href="#cookies" className="block hover:text-blue-600">5. Cookies</a>
+          <a href="#accounts" className="block hover:text-blue-600">6. Account & Billing</a>
         </nav>
       </aside>
 
       <div>
       {/* Main Content */}
-      <div className="flex-1 mt-28 px-4 py-6 md:py-8">
-              <Card className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto shadow-lg">
+      <div className="flex-1 mt-28 px-4 py-6 md:py-8" id="terms">
+              <Card  className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-3xl">1. Terms and Conditions</CardTitle>
                 </CardHeader>
@@ -52,7 +52,7 @@ export function TermsAndConditions() {
               </Card>
             </div>
 
-            <div className="flex-1 mt-16 px-4 py-6 md:py-8">
+            <div className="flex-1 mt-16 px-4 py-6 md:py-8" id="privacy">
               <Card className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-3xl">2. Privacy Policy</CardTitle>
@@ -80,7 +80,7 @@ export function TermsAndConditions() {
                 </CardContent>
               </Card>
             </div>
-            <div className="flex-1 mt-16 px-4 py-6 md:py-8">
+            <div className="flex-1 mt-16 px-4 py-6 md:py-8" id="userpolicy">
               <Card className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-3xl">3. User Policy</CardTitle>
@@ -94,7 +94,7 @@ export function TermsAndConditions() {
                 </CardContent>
               </Card>
             </div>
-            <div className="flex-1 mt-16 px-4 py-6 md:py-8">
+            <div className="flex-1 mt-16 px-4 py-6 md:py-8" id="copyright">
               <Card className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-3xl">4. Copyrights</CardTitle>
@@ -122,7 +122,7 @@ export function TermsAndConditions() {
                 </CardContent>
               </Card>
             </div>
-            <div className="flex-1 mt-16 px-4 py-6 md:py-8">
+            <div className="flex-1 mt-16 px-4 py-6 md:py-8" id="cookies">
               <Card className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-3xl">5. Cookies</CardTitle>
@@ -136,7 +136,7 @@ export function TermsAndConditions() {
                 </CardContent>
               </Card>
             </div>
-            <div className="flex-1 mt-16 px-4 py-6 md:py-8">
+            <div className="flex-1 mt-16 px-4 py-6 md:py-8" id="accounts">
               <Card className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-3xl">6. Accounts & Billing</CardTitle>
