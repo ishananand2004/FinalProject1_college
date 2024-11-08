@@ -186,7 +186,7 @@ export function LeadGenerationForm() {
               <FormControl>
                 <Textarea
                   placeholder="Medical Issue"
-                  className="h-32 bg-[#efefef] resize-none"
+                  className="h-28 bg-[#efefef] resize-none"
                   {...field}
                 />
               </FormControl>
@@ -204,12 +204,12 @@ export function LeadGenerationForm() {
                 <div
                   {...getRootProps()}
                   className={cn(
-                    `flex flex-col items-center justify-center border rounded-md bg-[#efefef] min-h-28 p-4 text-gray-500 cursor-pointer`,
+                    `flex flex-col items-center justify-center border rounded-md bg-[#efefef] min-h-16 p-4 text-gray-500 cursor-pointer`,
                     isDragActive ? "border-pink-500" : "border-transparent"
                   )}
                 >
                   <input {...getInputProps()} id="reports" />
-                  <p className="text-sm text-text/30 text-center pt-8">
+                  <p className="text-sm text-text/30 text-center pt-4">
                     Drag and drop a file here or click to select file locally.
                   </p>
                 </div>
