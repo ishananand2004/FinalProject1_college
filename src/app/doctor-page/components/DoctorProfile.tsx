@@ -182,7 +182,7 @@ export default function DoctorProfile() {
               <hr className="mt-2 bg-[#9e9e9e]" />
               <div className="flex flex-col md:flex-row items-start md:items-center gap-8 mt-4">
                 {/* Hospital Image */}
-                <img
+                <Image
                   src="/images/Narayana.webp"
                   alt="Narayana Multispeciality Hospital"
                   className="w-full md:w-1/2 lg:w-1/3 rounded-md object-cover"
