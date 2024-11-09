@@ -3,6 +3,7 @@ import { Navbar } from "@/components/patterns/Navbar";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import TanstackProviders from "./providers/TanstackProvider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -85,15 +86,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+        <TanstackProviders>
+          <>
+            <Navbar />
 
-        <div
-          id="wrapper"
-          className="fixed top-0 right-0 bottom-0 left-0 overflow-auto flex flex-col justify-between bg-[#F6F7F9]"
-        >
-          <main className="">{children}</main>
-          <Footer {...footerData} />
-        </div>
+            <div
+              id="wrapper"
+              className="fixed top-0 right-0 bottom-0 left-0 overflow-auto flex flex-col justify-between bg-[#F6F7F9]"
+            >
+              <main className="">{children}</main>
+              <Footer {...footerData} />
+            </div>
+          </>
+        </TanstackProviders>
       </body>
     </html>
   );
