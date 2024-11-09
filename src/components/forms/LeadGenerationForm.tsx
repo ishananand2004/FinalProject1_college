@@ -1,4 +1,3 @@
-// components/LeadGenerationForm.tsx
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -13,43 +12,32 @@ import {
 import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Textarea } from "@/components/ui/textarea";
-import { useFileUpload } from "@/hooks/useFileUpload"; // Import the custom hook
+import {
+  CreateLeadFormSchema,
+  ICreateLeadForm,
+} from "@/data/schemas/lead.schema";
+import { useFileUpload } from "@/hooks/useFileUpload";
 import { cn } from "@/lib/utils";
+import { leadQueries } from "@/queries/lead.queries";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 import { Icon } from "../ui/icon";
 
-// Define schema with zod
-const formSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
-  location: z.string().optional(),
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  phone: z
-    .string()
-    .min(10, { message: "Phone number must be at least 10 digits." }),
-  medicalIssue: z.string().optional(),
-  files: z.array(z.instanceof(File)).optional(), // Specify array of File instances
-});
-
-// Define TypeScript type for the form data
-type FormData = z.infer<typeof formSchema>;
-
 export function LeadGenerationForm() {
-  const form = useForm<FormData>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<ICreateLeadForm>({
+    resolver: zodResolver(CreateLeadFormSchema),
     defaultValues: {
-      name: "",
-      location: "",
+      firstName: "",
+      preferredTreatmentCity: "",
       email: "",
       phone: "",
       medicalIssue: "",
-      files: [], // Initialize files as an empty array
+      reports: [],
     },
   });
 
-  const { uploading, fileUrls, uploadStatus, onDrop } = useFileUpload(); // Use the custom hook for file upload
+  const { uploading, fileUrls, uploadStatus, onDrop } = useFileUpload();
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
@@ -59,18 +47,28 @@ export function LeadGenerationForm() {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    // Send the form data with only the uploaded file URLs
+  // Use the mutation hook from react-query-kit
+  const {
+    mutateAsync: createLead,
+    isPending,
+    error,
+  } = leadQueries.createLead.useMutation({});
+
+  const onSubmit = async (data: ICreateLeadForm) => {
     const leadData = {
       ...data,
-      files: fileUrls.map((file) => file.url), // Attach only the URLs of uploaded files
+      reports: fileUrls.map((file) => file.url),
     };
 
-    console.log("Form data submitted:", leadData);
+    // Convert keys to snake_case
 
-    // Here you can submit the `leadData` to your server or backend endpoint
-    // For example, using a mutation or API call:
-    // await leadMutation.mutateAsync(leadData);
+    try {
+      // Call the mutation to create the lead
+      await createLead(leadData);
+      console.log("Lead created successfully!");
+    } catch (err) {
+      console.error("Error creating lead:", err);
+    }
   };
 
   const filesEl = Object.entries(uploadStatus).map(
@@ -81,12 +79,9 @@ export function LeadGenerationForm() {
       >
         <span className=" text-xs ">{fileName}</span>
 
-        {
-          status === "uploading" ? (
-            <Icon provider="phosphor" name="Spinner" className="animate-spin" />
-          ) : null
-          // <Icon provider="phosphor" name="X" />
-        }
+        {status === "uploading" ? (
+          <Icon provider="phosphor" name="Spinner" className="animate-spin" />
+        ) : null}
       </li>
     )
   );
@@ -94,10 +89,15 @@ export function LeadGenerationForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+        {error ? (
+          <div className="text-destructive">
+            {error.message || "Unexpected error"}
+          </div>
+        ) : null}
         <div className="flex flex-col sm:flex-row sm:space-x-4">
           <FormField
             control={form.control}
-            name="name"
+            name="firstName"
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormLabel>
@@ -117,7 +117,7 @@ export function LeadGenerationForm() {
           />
           <FormField
             control={form.control}
-            name="location"
+            name={"preferredTreatmentCity"}
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormLabel>Preferred Treatment Location</FormLabel>
@@ -196,7 +196,7 @@ export function LeadGenerationForm() {
 
         <FormField
           control={form.control}
-          name="files"
+          name="reports"
           render={() => (
             <FormItem>
               <FormLabel>Reports</FormLabel>
@@ -225,9 +225,9 @@ export function LeadGenerationForm() {
         <Button
           type="submit"
           className="w-40 bg-rose-600 hover:bg-rose-700 text-white"
-          disabled={uploading || fileUrls.length === 0} // Disable until uploads are complete
+          disabled={isPending || uploading || fileUrls.length === 0} // Disable until uploads are complete
         >
-          {uploading ? "Uploading..." : "Consult Now for Free"}
+          {isPending ? "Submitting..." : "Consult Now for Free"}
         </Button>
       </form>
     </Form>
