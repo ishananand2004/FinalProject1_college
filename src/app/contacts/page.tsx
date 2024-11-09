@@ -4,9 +4,10 @@ import { FaChevronRight } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { LuPhoneCall } from "react-icons/lu";
 import { MdOutlineMailOutline } from "react-icons/md";
-import { LeadGenerationForm } from "../../components/forms/LeadGenerationForm";
+// import { LeadGenerationForm } from "../../components/forms/LeadGenerationForm";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import LeadGenerationForm from "@/components/forms/LeadGenerationForm";
 // (props) ye tha important h
 export default function Contacts() {
   return (
@@ -109,7 +110,7 @@ export default function Contacts() {
           </h1>
 
           <div className="w-[80vw] mt-5 mb-[6%] mx-auto p-6 border-none  sm:max-w-lg lg:max-w-2xl">
-            <LeadGenerationForm />
+            <LeadGenerationForm/>
           </div>
         </div>
       </div>
