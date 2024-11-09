@@ -77,7 +77,7 @@ const partners: ComponentProps<typeof CarouselLogo>["items"] = [
     title: "Apollo Hospital Logo",
   },
   {
-    src: "/images/logos/partners/ArtemisHospitalLogo.jpg",
+    src: "/images/logos/partners/ArtemisHospitallogo.jpg",
     title: "Artemis Hospitals Logo",
   },
   {
