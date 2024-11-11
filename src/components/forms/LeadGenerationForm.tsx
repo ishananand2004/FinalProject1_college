@@ -120,7 +120,7 @@ export function LeadGenerationForm() {
             name={"preferredTreatmentCity"}
             render={({ field }) => (
               <FormItem className="flex-1">
-                <FormLabel>Preferred Treatment Location</FormLabel>
+                <FormLabel>Preferred Location</FormLabel>
                 <FormControl>
                   <Input
                     placeholder="Bengaluru"
