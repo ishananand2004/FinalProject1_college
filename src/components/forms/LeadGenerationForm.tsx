@@ -173,7 +173,7 @@ export default function LeadGenerationForm() {
           <FormField
             control={form.control}
             name="files"
-            render={({ field }) => (
+            render={({ }) => (
               <FormItem>
                 <FormLabel>Reports</FormLabel>
                 <FormControl>
