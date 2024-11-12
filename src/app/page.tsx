@@ -8,6 +8,7 @@ import {
 } from "@/components/patterns/sections/FeatureGrid";
 import { FeatureWithImage } from "@/components/patterns/sections/FeatureWithImage";
 import { Section } from "@/components/ui/section";
+
 import { ComponentProps } from "react";
 
 // const features: Feature[] = [
@@ -111,6 +112,7 @@ export default function Home() {
     <>
       <section className="bg-background">
         <HeroMain />
+        
       </section>
       <div className="container mx-auto">
         <div className="relative -my-20 z-100 px-4 md:px-8 lg:px-16 py-12 bg-white rounded-lg shadow-lg">
