@@ -20,7 +20,7 @@ export function TermsAndConditions() {
           <a href="#termination" className="block hover:text-blue-600">8. Termination of Services</a>
           <a href="#amendments" className="block hover:text-blue-600">9. Amendments</a>
           <a href="#law" className="block hover:text-blue-600">10. Governing Law and Dispute Resolution</a>
-          <a href="#contact" className="block hover:text-blue-600">11. Contact Information</a>
+          <a href="#contact information" className="block hover:text-blue-600">11. Contact Information</a>
         </nav>
       </aside>
 
@@ -171,7 +171,7 @@ export function TermsAndConditions() {
                 </CardContent>                 
               </Card>
             </div>
-            <div className="flex-1 mt-10 px-4 py-6 md:py-8" id="contact">
+            <div className="flex-1 mt-10 px-4 py-6 md:py-8" id="contact information">
               <Card className="max-w-full md:max-w-2xl lg:max-w-3xl mx-auto shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-3xl">11. Contact Information</CardTitle>
