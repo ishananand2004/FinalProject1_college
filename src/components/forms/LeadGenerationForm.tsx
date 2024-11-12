@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -200,7 +201,7 @@ export function LeadGenerationForm() {
 
           <FormField
             control={form.control}
-            name="files"
+            name="reports"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Reports</FormLabel>
