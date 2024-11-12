@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import {
   CreateLeadFormSchema,
@@ -23,7 +24,8 @@ import { leadQueries } from "@/queries/lead.queries";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
-import { Icon } from "../ui/icon";
+import { Combobox } from "../ui/combobox";
+import { leadOptions } from "@/constants/lead.constants";
 
 export function LeadGenerationForm() {
   const form = useForm<ICreateLeadForm>({
@@ -82,9 +84,7 @@ export function LeadGenerationForm() {
       >
         <span className=" text-xs ">{fileName}</span>
 
-        {status === "uploading" ? (
-          <Icon provider="phosphor" name="Spinner" className="animate-spin" />
-        ) : null}
+        {status === "uploading" ? <Spinner /> : null}
       </li>
     )
   );
@@ -124,11 +124,28 @@ export function LeadGenerationForm() {
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormLabel>Preferred Location</FormLabel>
-                <FormControl>
-                  <Input
+                <FormControl {...field}>
+                  {/* <Input
                     placeholder="Bengaluru"
                     {...field}
                     className="bg-[#efefef]"
+                  /> */}
+
+                  <Combobox
+                    options={leadOptions}
+                    placeholder="Select a location..."
+                    renderItem={(option) => (
+                      <div className="flex flex-col">
+                        <span>{option.label}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {(option as (typeof leadOptions)[number]).country}
+                        </span>
+                      </div>
+                    )}
+                    onValueChange={(value) =>
+                      form.setValue("preferredTreatmentCity", value)
+                    }
+                    className="bg-[#efefef] w-full"
                   />
                 </FormControl>
                 <FormMessage />
