@@ -9,6 +9,21 @@
         "select-name": "off"
       }
     ],
+    "button-type": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "text-wrap"
+        ]
+      }
+    ],
+    "axe/structure": [
+      "default",
+      {
+        "listitem": "off"
+      }
+    ],
     "no-inline-styles": "off"
   }
 }

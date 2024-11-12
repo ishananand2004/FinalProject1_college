@@ -7,7 +7,7 @@ import { MdOutlineMailOutline } from "react-icons/md";
 // import { LeadGenerationForm } from "../../components/forms/LeadGenerationForm";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import LeadGenerationForm from "@/components/forms/LeadGenerationForm";
+import { LeadGenerationForm } from "@/components/forms/LeadGenerationForm";
 // (props) ye tha important h
 export default function Contacts() {
   return (
@@ -62,10 +62,10 @@ export default function Contacts() {
         </div>
 
         <div>
-          <h1 className="font-bold  text-4xl text-pink-500">
+          <h1 className="font-bold  text-4xl text-primary">
             Convinced yet? Let&apos;s make{" "}
           </h1>
-          <h1 className="font-bold  text-4xl text-pink-500 mt-2">
+          <h1 className="font-bold  text-4xl text-primary mt-2">
             something great together.
           </h1>
 
@@ -101,7 +101,7 @@ export default function Contacts() {
       {/* 3rd part start from here */}
       <div>
         <div className="flex justify-center mt-10 flex-col items-center">
-          <h1 className="text-4xl text-pink-500 font-semibold">
+          <h1 className="text-4xl text-primary font-semibold">
             Drop Us a Line
           </h1>
           <h1 className="mt-5 text-xl text-gray-600">
