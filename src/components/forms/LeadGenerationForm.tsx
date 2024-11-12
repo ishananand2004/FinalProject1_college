@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -198,35 +199,37 @@ export function LeadGenerationForm() {
           )}
         />
 
-        <FormField
-          control={form.control}
-          name="reports"
-          render={() => (
-            <FormItem>
-              <FormLabel>Reports</FormLabel>
-              <FormControl>
-                <div
-                  {...getRootProps()}
-                  className={cn(
-                    `flex flex-col items-center justify-center border-dashed border-2 rounded-md bg-[#efefef] min-h-16 p-4 text-gray-500 cursor-pointer`,
-                    isDragActive
-                      ? "border-primary"
-                      : "border-secondary-foreground/40"
-                  )}
-                >
-                  <input {...getInputProps()} id="reports" />
-                  <p className="text-sm text-text/30 text-center">
-                    Drag and drop a file here or click to select file locally.
-                  </p>
-                </div>
-              </FormControl>
-              <FormMessage />
-              <ul className="flex flex-wrap gap-2 justify-center items-center mt-auto">
-                {filesEl}
-              </ul>
-            </FormItem>
-          )}
-        />
+          <FormField
+            control={form.control}
+            name="files"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Reports</FormLabel>
+                <FormControl>
+                  <div
+                    {...getRootProps()}
+                    className={`flex items-center justify-center border rounded-md bg-[#efefef] h-28 p-4 text-gray-500 ${
+                      isDragActive ? "border-pink-500" : "border-transparent"
+                    }`}
+                  >
+                    <input {...getInputProps()} id="reports" />
+                    {isDragActive ? (
+                      <p className="text-rose-600">Drop the files here...</p>
+                    ) : (
+                      <p>
+                        Drag and Drop (or{" "}
+                        <span className="text-sky-400 hover:underline cursor-pointer">
+                          Choose Files
+                        </span>
+                        )
+                      </p>
+                    )}
+                  </div>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
         <Button
           type="submit"
