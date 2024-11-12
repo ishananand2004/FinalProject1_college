@@ -205,7 +205,7 @@ export function LeadGenerationForm() {
                   {...getRootProps()}
                   className={cn(
                     `flex flex-col items-center justify-center border rounded-md bg-[#efefef] min-h-16 p-4 text-gray-500 cursor-pointer`,
-                    isDragActive ? "border-pink-500" : "border-transparent"
+                    isDragActive ? "border-primary" : "border-transparent"
                   )}
                 >
                   <input {...getInputProps()} id="reports" />
