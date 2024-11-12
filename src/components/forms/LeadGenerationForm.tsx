@@ -26,6 +26,7 @@ import { Icon } from "../ui/icon";
 
 export function LeadGenerationForm() {
   const form = useForm<ICreateLeadForm>({
+    mode: "all",
     resolver: zodResolver(CreateLeadFormSchema),
     defaultValues: {
       firstName: "",
@@ -35,6 +36,7 @@ export function LeadGenerationForm() {
       medicalIssue: "",
       reports: [],
     },
+    criteriaMode: "all",
   });
 
   const { uploading, fileUrls, uploadStatus, onDrop } = useFileUpload();
@@ -128,6 +130,7 @@ export function LeadGenerationForm() {
                     className="bg-[#efefef]"
                   />
                 </FormControl>
+                <FormMessage />
               </FormItem>
             )}
           />
@@ -190,6 +193,7 @@ export function LeadGenerationForm() {
                   {...field}
                 />
               </FormControl>
+              <FormMessage />
             </FormItem>
           )}
         />
@@ -204,12 +208,14 @@ export function LeadGenerationForm() {
                 <div
                   {...getRootProps()}
                   className={cn(
-                    `flex flex-col items-center justify-center border rounded-md bg-[#efefef] min-h-16 p-4 text-gray-500 cursor-pointer`,
-                    isDragActive ? "border-primary" : "border-transparent"
+                    `flex flex-col items-center justify-center border-dashed border-2 rounded-md bg-[#efefef] min-h-16 p-4 text-gray-500 cursor-pointer`,
+                    isDragActive
+                      ? "border-primary"
+                      : "border-secondary-foreground/40"
                   )}
                 >
                   <input {...getInputProps()} id="reports" />
-                  <p className="text-sm text-text/30 text-center pt-4">
+                  <p className="text-sm text-text/30 text-center">
                     Drag and drop a file here or click to select file locally.
                   </p>
                 </div>
@@ -225,7 +231,7 @@ export function LeadGenerationForm() {
         <Button
           type="submit"
           className="w-40 bg-rose-600 hover:bg-rose-700 text-white"
-          disabled={isPending || uploading || fileUrls.length === 0} // Disable until uploads are complete
+          disabled={isPending || uploading} // Disable until uploads are complete
         >
           {isPending ? "Submitting..." : "Consult Now for Free"}
         </Button>
