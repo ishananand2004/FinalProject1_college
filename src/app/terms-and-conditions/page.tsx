@@ -8,7 +8,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
-import { TermsAndConditions } from "./components/TermsAndConditions";
+import { TermsAndConditions } from "./components/TermsAndCondition";
 
 
 
