@@ -57,15 +57,14 @@ export default function Home() {
   const features: Feature[] = [
     {
       icon: { provider: "phosphor", name: "IdentificationCard" }, // Replace with the actual icon name for Visa Support
-      title: "Visa Support",
-      description:
-        "Assistance with visa applications and documentation to ensure a smooth travel process.",
+      title: t("Visa_Support"),
+      description: t("Visa_Assistance"),
     },
     {
       icon: { provider: "phosphor", name: "Hospital" }, // Replace with the actual icon name for Treatment
-      title: "Treatment",
+      title: t("Treatment"),
       description:
-        "Coordination with top medical professionals and facilities for personalized treatment plans.",
+        t("Treatment_Coordination"),
     },
     {
       icon: { provider: "phosphor", name: "Translate" }, // Replace with the actual icon name for Language Support
