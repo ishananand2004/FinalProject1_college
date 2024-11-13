@@ -119,7 +119,7 @@ export function LeadGenerationForm() {
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormLabel>
-                  Name<sup className="text-destructive">*</sup>
+                  {t("Name")}<sup className="text-destructive">*</sup>
                 </FormLabel>
                 <FormControl>
                   <Input
