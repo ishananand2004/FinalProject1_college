@@ -19,13 +19,14 @@ import {
   ICreateLeadForm,
 } from "@/data/schemas/lead.schema";
 import { useFileUpload } from "@/hooks/useFileUpload";
-import { cn } from "@/lib/utils";
+import { cn, getCountryCodeFromGeolocation } from "@/lib/utils";
 import { leadQueries } from "@/queries/lead.queries";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
 import { Combobox } from "../ui/combobox";
 import { treatmentCityOptions } from "@/constants/lead.constants";
+import { ComponentProps, useEffect, useState } from "react";
 
 export function LeadGenerationForm() {
   const form = useForm<ICreateLeadForm>({
@@ -42,6 +43,9 @@ export function LeadGenerationForm() {
     criteriaMode: "all",
   });
 
+  const [countryCode, setCountryCode] =
+    useState<ComponentProps<typeof PhoneInput>["defaultCountry"]>("BD");
+
   const { uploading, fileUrls, uploadStatus, onDrop } = useFileUpload();
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
@@ -51,6 +55,13 @@ export function LeadGenerationForm() {
       "image/*": [".jpg", ".jpeg", ".png"],
     },
   });
+
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const a: any = getCountryCodeFromGeolocation();
+    console.log("country code", a);
+    setCountryCode(a);
+  }, []);
 
   // Use the mutation hook from react-query-kit
   const {
@@ -190,7 +201,7 @@ export function LeadGenerationForm() {
                 <FormControl>
                   <PhoneInput
                     {...field}
-                    defaultCountry="BD"
+                    defaultCountry={countryCode}
                     className="w-full bg-[#efefef] rounded-md"
                     placeholder="E.g. 8130600628"
                     required
