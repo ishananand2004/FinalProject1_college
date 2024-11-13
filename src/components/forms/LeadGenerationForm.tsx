@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
+import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
 import {
   CreateLeadFormSchema,
@@ -23,7 +24,8 @@ import { leadQueries } from "@/queries/lead.queries";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
-import { Icon } from "../ui/icon";
+import { Combobox } from "../ui/combobox";
+import { treatmentCityOptions } from "@/constants/lead.constants";
 
 export function LeadGenerationForm() {
   const form = useForm<ICreateLeadForm>({
@@ -82,9 +84,7 @@ export function LeadGenerationForm() {
       >
         <span className=" text-xs ">{fileName}</span>
 
-        {status === "uploading" ? (
-          <Icon provider="phosphor" name="Spinner" className="animate-spin" />
-        ) : null}
+        {status === "uploading" ? <Spinner /> : null}
       </li>
     )
   );
@@ -124,11 +124,31 @@ export function LeadGenerationForm() {
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormLabel>Preferred Location</FormLabel>
-                <FormControl>
-                  <Input
+                <FormControl {...field}>
+                  {/* <Input
                     placeholder="Bengaluru"
                     {...field}
                     className="bg-[#efefef]"
+                  /> */}
+
+                  <Combobox
+                    options={treatmentCityOptions}
+                    placeholder="Preferred Location"
+                    renderItem={(option) => (
+                      <div className="flex flex-col">
+                        <span>{option.label}</span>
+                        <span className="text-xs text-muted-foreground">
+                          {
+                            (option as (typeof treatmentCityOptions)[number])
+                              .country
+                          }
+                        </span>
+                      </div>
+                    )}
+                    onValueChange={(value) =>
+                      form.setValue("preferredTreatmentCity", value)
+                    }
+                    className="bg-[#efefef] w-full"
                   />
                 </FormControl>
                 <FormMessage />
@@ -199,37 +219,35 @@ export function LeadGenerationForm() {
           )}
         />
 
-          <FormField
-            control={form.control}
-            name="reports"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Reports</FormLabel>
-                <FormControl>
-                  <div
-                    {...getRootProps()}
-                    className={`flex items-center justify-center border rounded-md bg-[#efefef] h-28 p-4 text-gray-500 ${
-                      isDragActive ? "border-pink-500" : "border-transparent"
-                    }`}
-                  >
-                    <input {...getInputProps()} id="reports" />
-                    {isDragActive ? (
-                      <p className="text-rose-600">Drop the files here...</p>
-                    ) : (
-                      <p>
-                        Drag and Drop (or{" "}
-                        <span className="text-sky-400 hover:underline cursor-pointer">
-                          Choose Files
-                        </span>
-                        )
-                      </p>
-                    )}
-                  </div>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+        <FormField
+          control={form.control}
+          name="reports"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Reports</FormLabel>
+              <FormControl>
+                <div
+                  {...getRootProps()}
+                  className={cn(
+                    `flex flex-col items-center justify-center border-dashed border-2 rounded-md bg-[#efefef] min-h-16 p-4 text-gray-500 cursor-pointer`,
+                    isDragActive
+                      ? "border-primary"
+                      : "border-secondary-foreground/40"
+                  )}
+                >
+                  <input {...getInputProps()} id="reports" />
+                  <p className="text-sm text-text/30 text-center">
+                    Drag and drop a file here or click to select file locally.
+                  </p>
+                </div>
+              </FormControl>
+              <FormMessage />
+              <ul className="flex flex-wrap gap-2 justify-center items-center mt-auto">
+                {filesEl}
+              </ul>
+            </FormItem>
+          )}
+        />
 
         <Button
           type="submit"
