@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import StickyNavbar from "./StickyNavbar";
+
+import { Link as AppLink } from "@/i18n/routing";
 // import StickyNavbar from "react-sticky-navbar";
 
 const navigationItems = [
@@ -55,13 +57,13 @@ export const Navbar = () => {
             {/* Navigation Links */}
             <nav className="hidden lg:flex space-x-6">
               {navigationItems.map((item) => (
-                <Link
+                <AppLink
                   key={item.title}
                   href={item.href}
                   className="text-gray-700 hover:text-gray-900 font-[700]"
                 >
                   {item.title}
-                </Link>
+                </AppLink>
               ))}
             </nav>
 
@@ -73,9 +75,9 @@ export const Navbar = () => {
               <Link href="https://facebook.com" target="_blank">
                 <Facebook className="w-5 h-5 text-gray-600 hover:text-gray-800" />
               </Link>
-              <Link href="/languages" target="_blank">
+              {/* <AppLink href="/languages" target="_blank">
                 <Globe className="w-5 h-5 text-gray-600 hover:text-gray-800" />
-              </Link>
+              </AppLink> */}
               <Link href="https://instagram.com" target="_blank">
                 <Instagram className="w-5 h-5 text-gray-600 hover:text-gray-800" />
               </Link>
@@ -97,13 +99,13 @@ export const Navbar = () => {
           {isOpen && (
             <div className="lg:hidden bg-white shadow-lg absolute top-full left-0 w-full p-4">
               {navigationItems.map((item) => (
-                <Link
+                <AppLink
                   key={item.title}
                   href={item.href}
                   className="block py-2 text-gray-700 hover:text-gray-900 font-medium"
                 >
                   {item.title}
-                </Link>
+                </AppLink>
               ))}
               <div className="flex space-x-4 mt-4">
                 <Link href="https://twitter.com" target="_blank">
@@ -112,9 +114,9 @@ export const Navbar = () => {
                 <Link href="https://facebook.com" target="_blank">
                   <Facebook className="w-5 h-5 text-gray-600 hover:text-gray-800" />
                 </Link>
-                <Link href="/languages" target="_blank">
+                {/* <Link href="/languages" target="_blank">
                   <Globe className="w-5 h-5 text-gray-600 hover:text-gray-800" />
-                </Link>
+                </Link> */}
                 <Link href="https://instagram.com" target="_blank">
                   <Instagram className="w-5 h-5 text-gray-600 hover:text-gray-800" />
                 </Link>

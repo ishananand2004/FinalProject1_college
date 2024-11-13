@@ -1,6 +1,7 @@
-import Link from "next/link";
+// import Link from "next/link";
 import React from "react";
 import { Icon, IconName } from "../ui/icon";
+import { Link } from "@/i18n/routing";
 
 // Define interfaces for the navigation items and footer props
 interface SubItem {
