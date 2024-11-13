@@ -68,30 +68,30 @@ export default function Home() {
     },
     {
       icon: { provider: "phosphor", name: "Translate" }, // Replace with the actual icon name for Language Support
-      title: "Language Support",
+      title: t("Language_Support"),
       description:
-        "Providing interpreters and language assistance to ensure clear communication.",
+      t("Language_Assistance"),
     },
     {
       icon: { provider: "phosphor", name: "Bed" }, // Replace with the actual icon name for Local Accommodation
-      title: "Local Accommodation",
+      title: t("Local_Accommodation"),
       description:
-        "Arrangement of comfortable and convenient lodging near medical facilities.",
+        t("Accommodation_Arrangement"),
     },
     {
       icon: { provider: "phosphor", name: "AirplaneTakeoff" }, // Replace with the actual icon name for Travel Booking
-      title: "Travel Booking",
+      title: t("Travel_Booking"),
       description:
-        "Management of flight bookings and travel itineraries for a hassle-free journey.",
+        t("Booking_Management"),
     },
     {
       icon: { provider: "phosphor", name: "Handshake" }, // Replace with the actual icon name for On Ground Support
-      title: "On Ground Support",
+      title: t("On_Ground_Support"),
       description:
-        "Local assistance and support throughout your stay, from transportation to daily needs.",
+        t("Ground_Assistance"),
     },
   ];
-
+  
   return (
     <>
       <section className="bg-background">

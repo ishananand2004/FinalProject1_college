@@ -23,7 +23,7 @@ export const HeroMain = () => {
                 <h1 className="text-3xl md:text-4xl max-w-lg tracking-tighter !leading-snug text-left font-regular md:font-semibold">
                   {t("Your_Health")} <br />
                   {t("Our_Priority")} <br />
-                  {t("guidingYouEveryStep")}
+                  {t("Guiding_You_Every_Step")}
                 </h1>
               </div>
             </div>
@@ -31,7 +31,7 @@ export const HeroMain = () => {
           <div className="z-10">
             <div className="max-w-md mx-auto md:ml-auto p-6 border border-primary/40 rounded-3xl shadow-lg bg-white">
               <h2 className="text-2xl font-bold text-primary mb-6">
-                {t("needHelpLetsTalk")}
+                {t("Need_Help_Lets_Talk")}
               </h2>
               <LeadGenerationForm />
             </div>
