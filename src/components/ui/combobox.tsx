@@ -66,7 +66,7 @@ export const Combobox = React.forwardRef(function <T extends Option>(
       onOpenChange={setOpen}
       data-testid="combobox-popover-wrapper"
     >
-      <PopoverTrigger className="!bg-secondary" asChild>
+      <PopoverTrigger className="!bg-[#efefef]" asChild>
         <Button
           ref={ref}
           variant="outline"
