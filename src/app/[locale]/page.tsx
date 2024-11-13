@@ -12,45 +12,6 @@ import { useTranslations } from "next-intl";
 
 import { ComponentProps } from "react";
 
-const features: Feature[] = [
-  {
-    icon: { provider: "phosphor", name: "IdentificationCard" }, // Replace with the actual icon name for Visa Support
-    title: "Visa Support",
-    description:
-      "Assistance with visa applications and documentation to ensure a smooth travel process.",
-  },
-  {
-    icon: { provider: "phosphor", name: "Hospital" }, // Replace with the actual icon name for Treatment
-    title: "Treatment",
-    description:
-      "Coordination with top medical professionals and facilities for personalized treatment plans.",
-  },
-  {
-    icon: { provider: "phosphor", name: "Translate" }, // Replace with the actual icon name for Language Support
-    title: "Language Support",
-    description:
-      "Providing interpreters and language assistance to ensure clear communication.",
-  },
-  {
-    icon: { provider: "phosphor", name: "Bed" }, // Replace with the actual icon name for Local Accommodation
-    title: "Local Accommodation",
-    description:
-      "Arrangement of comfortable and convenient lodging near medical facilities.",
-  },
-  {
-    icon: { provider: "phosphor", name: "AirplaneTakeoff" }, // Replace with the actual icon name for Travel Booking
-    title: "Travel Booking",
-    description:
-      "Management of flight bookings and travel itineraries for a hassle-free journey.",
-  },
-  {
-    icon: { provider: "phosphor", name: "Handshake" }, // Replace with the actual icon name for On Ground Support
-    title: "On Ground Support",
-    description:
-      "Local assistance and support throughout your stay, from transportation to daily needs.",
-  },
-];
-
 const partners: ComponentProps<typeof CarouselLogo>["items"] = [
   {
     src: "/images/logos/partners/Aster Hospitals Logo.webp",
@@ -92,6 +53,46 @@ const partners: ComponentProps<typeof CarouselLogo>["items"] = [
 
 export default function Home() {
   const t = useTranslations("HomePage");
+
+  const features: Feature[] = [
+    {
+      icon: { provider: "phosphor", name: "IdentificationCard" }, // Replace with the actual icon name for Visa Support
+      title: "Visa Support",
+      description:
+        "Assistance with visa applications and documentation to ensure a smooth travel process.",
+    },
+    {
+      icon: { provider: "phosphor", name: "Hospital" }, // Replace with the actual icon name for Treatment
+      title: "Treatment",
+      description:
+        "Coordination with top medical professionals and facilities for personalized treatment plans.",
+    },
+    {
+      icon: { provider: "phosphor", name: "Translate" }, // Replace with the actual icon name for Language Support
+      title: "Language Support",
+      description:
+        "Providing interpreters and language assistance to ensure clear communication.",
+    },
+    {
+      icon: { provider: "phosphor", name: "Bed" }, // Replace with the actual icon name for Local Accommodation
+      title: "Local Accommodation",
+      description:
+        "Arrangement of comfortable and convenient lodging near medical facilities.",
+    },
+    {
+      icon: { provider: "phosphor", name: "AirplaneTakeoff" }, // Replace with the actual icon name for Travel Booking
+      title: "Travel Booking",
+      description:
+        "Management of flight bookings and travel itineraries for a hassle-free journey.",
+    },
+    {
+      icon: { provider: "phosphor", name: "Handshake" }, // Replace with the actual icon name for On Ground Support
+      title: "On Ground Support",
+      description:
+        "Local assistance and support throughout your stay, from transportation to daily needs.",
+    },
+  ];
+
   return (
     <>
       <section className="bg-background">
