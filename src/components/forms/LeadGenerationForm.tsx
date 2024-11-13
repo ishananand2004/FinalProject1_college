@@ -192,6 +192,7 @@ export function LeadGenerationForm() {
                     {...field}
                     defaultCountry="BD"
                     className="w-full bg-[#efefef] rounded-md"
+                    placeholder="E.g. 8130600628"
                     required
                   />
                 </FormControl>

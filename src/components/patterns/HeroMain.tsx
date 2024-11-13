@@ -23,7 +23,7 @@ export const HeroMain = () => (
           </div>
         </div>
         <div className="z-10">
-          <div className="max-w-md mx-auto md:ml-auto p-6 border border-primary/40 rounded-3xl shadow-lg bg-white">
+          <div className="max-w-lg mx-auto md:ml-auto p-6 border border-primary/40 rounded-3xl shadow-lg bg-white">
             <h2 className="text-2xl font-bold text-primary mb-6">
               Need Help? Let&apos;s Talk!
             </h2>
