@@ -12,16 +12,17 @@ import { LeadGenerationForm } from "@/components/forms/LeadGenerationForm";
 export default function Contacts() {
   return (
     <>
-      <div className="relative bg-blue-100 h-[50vh] py-20 mt-[5.1%]">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-semibold text-gray-800">Get in Touch</h1>
-          <div className="flex justify-center mt-5 gap-x-5">
-            <h1 className="text-gray-600">Home</h1>
-            <FaChevronRight
-              className="translate-y-[40%] text-gray-600"
-              size={"0.9vw"}
-            />
-            <h1 className="text-gray-600">Contact</h1>
+      <div className="relative bg-blue-100 h-[50vh] py-20 ">
+        <div className="container mx-auto text-center flex items-center justify-center h-full">
+          <div className="pt-8">
+            <h1 className="text-5xl font-semibold text-gray-800">
+              Get in Touch
+            </h1>
+            <div className="flex justify-center items-center mt-5 gap-x-2">
+              <h1 className="text-gray-600">Home</h1>
+              <FaChevronRight className=" text-gray-600" size={"0.9vw"} />
+              <h1 className="text-gray-600">Contact</h1>
+            </div>
           </div>
         </div>
 
@@ -100,17 +101,17 @@ export default function Contacts() {
 
       {/* 3rd part start from here */}
       <div>
-        <div className="flex justify-center mt-10 flex-col items-center">
+        <div className="flex justify-center mt-10 px-8 flex-col items-center">
           <h1 className="text-4xl text-primary font-semibold">
             Drop Us a Line
           </h1>
-          <h1 className="mt-5 text-xl text-gray-600">
+          <h1 className="mt-5 text-xl text-gray-600 mx-20">
             Reach out to us for any healthcare related queries and we will get
             back to you shortly.
           </h1>
 
           <div className="w-[80vw] mt-5 mb-[6%] mx-auto p-6 border-none  sm:max-w-lg lg:max-w-2xl">
-            <LeadGenerationForm/>
+            <LeadGenerationForm />
           </div>
         </div>
       </div>
