@@ -35,21 +35,23 @@ export const Navbar = () => {
           <div className="container mx-auto flex items-center justify-between px-4 py-2">
             {/* Logo */}
             <div className="flex items-center">
-              <Image
-                src="/images/logos/caremedico-logo-lg.png"
-                alt="CareMedico Desktop Logo"
-                className="hidden lg:block  mr-2"
-                width="110"
-                height={"59"}
-              />
-              {/* Mobile Logo */}
-              <Image
-                src="/images/logos/caremedico-logo.png"
-                alt="CareMedico Mobile Logo"
-                className="block lg:hidden min-h-8 mr-2"
-                width="60"
-                height="60"
-              />
+              <Link href={"/"}>
+                <Image
+                  src="/images/logos/caremedico-logo-lg.png"
+                  alt="CareMedico Desktop Logo"
+                  className="hidden lg:block  mr-2"
+                  width="110"
+                  height={"59"}
+                />
+                {/* Mobile Logo */}
+                <Image
+                  src="/images/logos/caremedico-logo.png"
+                  alt="CareMedico Mobile Logo"
+                  className="block lg:hidden min-h-8 mr-2"
+                  width="60"
+                  height="60"
+                />
+              </Link>
               {/* <span className="text-lg font-bold text-red-500">Care</span>
           <span className="text-lg font-bold text-gray-800">Medico</span> */}
             </div>
