@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { PhoneInput } from "@/components/ui/phone-input";
 import { Spinner } from "@/components/ui/spinner";
 import { Textarea } from "@/components/ui/textarea";
+import { treatmentCityOptions } from "@/constants/lead.constants";
 import {
   CreateLeadFormSchema,
   ICreateLeadForm,
@@ -22,15 +23,13 @@ import { useFileUpload } from "@/hooks/useFileUpload";
 import { cn, getCountryCodeFromGeolocation } from "@/lib/utils";
 import { leadQueries } from "@/queries/lead.queries";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useTranslations } from "next-intl";
+import { ComponentProps, useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
 import { Combobox } from "../ui/combobox";
-import { treatmentCityOptions } from "@/constants/lead.constants";
-import { ComponentProps, useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
 
 export function LeadGenerationForm() {
-  
   const form = useForm<ICreateLeadForm>({
     mode: "all",
     resolver: zodResolver(CreateLeadFormSchema),
@@ -119,7 +118,8 @@ export function LeadGenerationForm() {
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormLabel>
-                  {t("Name")}<sup className="text-destructive">*</sup>
+                  {t("Name")}
+                  <sup className="text-destructive">*</sup>
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -148,7 +148,7 @@ export function LeadGenerationForm() {
 
                   <Combobox
                     options={treatmentCityOptions}
-                    placeholder= {t("Preferred_Treatment_Location")}
+                    placeholder={t("Preferred_Treatment_Location")}
                     renderItem={(option) => (
                       <div className="flex flex-col">
                         <span>{option.label}</span>
@@ -179,7 +179,8 @@ export function LeadGenerationForm() {
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormLabel>
-                  {t("Email_Address")}<sup className="text-destructive">*</sup>
+                  {t("Email_Address")}
+                  <sup className="text-destructive">*</sup>
                 </FormLabel>
                 <FormControl>
                   <Input
@@ -200,7 +201,8 @@ export function LeadGenerationForm() {
             render={({ field }) => (
               <FormItem className="flex-1">
                 <FormLabel>
-                  {t("Phone_Number")}<sup className="text-destructive">*</sup>
+                  {t("Phone_Number")}
+                  <sup className="text-destructive">*</sup>
                 </FormLabel>
                 <FormControl>
                   <PhoneInput
@@ -225,7 +227,7 @@ export function LeadGenerationForm() {
               <FormLabel> {t("Medical_Issue")} </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder= {t("Medical_Issue")}
+                  placeholder={t("Medical_Issue")}
                   className="h-28 bg-[#efefef] resize-none"
                   {...field}
                 />
