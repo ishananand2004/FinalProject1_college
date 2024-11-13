@@ -8,6 +8,7 @@ import {
 } from "@/components/patterns/sections/FeatureGrid";
 import { FeatureWithImage } from "@/components/patterns/sections/FeatureWithImage";
 import { Section } from "@/components/ui/section";
+import { useTranslations } from "next-intl";
 
 import { ComponentProps } from "react";
 
@@ -90,6 +91,7 @@ const partners: ComponentProps<typeof CarouselLogo>["items"] = [
 ];
 
 export default function Home() {
+  const t = useTranslations("HomePage");
   return (
     <>
       <section className="bg-background">
@@ -100,7 +102,7 @@ export default function Home() {
           <Section>
             <FeatureGrid
               badge="WHAT WE DO"
-              title="Our unique process makes your Medical Journey Smooth."
+              title={t("Our_Unique_Process")}
               features={features}
             />
           </Section>
