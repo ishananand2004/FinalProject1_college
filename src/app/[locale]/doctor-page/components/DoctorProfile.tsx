@@ -185,6 +185,8 @@ export default function DoctorProfile() {
                 <Image
                   src="/images/Narayana.webp"
                   alt="Narayana Multispeciality Hospital"
+                  width={600}
+                  height={400}
                   className="w-full md:w-1/2 lg:w-1/3 rounded-md object-cover"
                 />
                 {/* Location Details */}
