@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
-import ct from "countries-and-timezones";
+import { getCountryForTimezone } from "countries-and-timezones";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -29,5 +29,5 @@ export const convertKeysToSnakeCase = (obj: any): any => {
 export const getCountryCodeFromGeolocation = () => {
   const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  return ct.getCountryForTimezone(tz)?.id || "IN";
+  return getCountryForTimezone(tz)?.id || "IN";
 };
