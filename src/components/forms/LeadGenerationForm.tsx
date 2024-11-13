@@ -26,6 +26,8 @@ import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
 import { Combobox } from "../ui/combobox";
 import { treatmentCityOptions } from "@/constants/lead.constants";
+import { ComponentProps, useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 export function LeadGenerationForm() {
   
