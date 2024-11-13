@@ -5,6 +5,7 @@ import {
   PutObjectCommand,
   DeleteObjectCommand,
 } from "@aws-sdk/client-s3";
+import { ulid } from "ulid";
 
 const Bucket = process.env.NEXT_AWS_S3_BUCKET;
 const s3 = new S3Client({
@@ -14,6 +15,15 @@ const s3 = new S3Client({
     secretAccessKey: process.env.NEXT_AWS_S3_ACCESS_KEY_SECRET as string,
   },
 });
+
+// Sanitize the filename to make it URL-safe
+const sanitizeFileName = (fileName: string) => {
+  // Remove any special characters and spaces, and replace spaces with underscores
+  return fileName
+    .replace(/\s+/g, "_") // Replace spaces with underscores
+    .replace(/[^\w.-]+/g, "") // Remove special characters (except for letters, numbers, period, and dash)
+    .toLowerCase(); // Optional: make it lowercase for uniformity
+};
 
 // Endpoint to get the list of files in the bucket /api/files
 export async function GET() {
@@ -34,39 +44,37 @@ export async function POST(request: NextRequest) {
     const formData = await request.formData();
     const files = formData.getAll("file") as File[];
 
-    // Array to hold the URLs or object info
     const uploadedFilesInfo = await Promise.all(
       files.map(async (file) => {
-        // Convert the file to a buffer to send to S3
+        const uniqueFilename = `report_${ulid()}_${sanitizeFileName(
+          file.name
+        )}`; // Sanitize and add unique ID
         const Body = (await file.arrayBuffer()) as Buffer;
 
         // Upload the file to S3
         const uploadResponse = await s3.send(
           new PutObjectCommand({
             Bucket,
-            Key: file.name,
+            Key: uniqueFilename,
             Body,
           })
         );
 
-        console.log("uploadResponse", uploadResponse);
-
-        let sanitizedFileName = encodeURIComponent(file.name);
-        sanitizedFileName = sanitizedFileName.replace(/%20/g, "+");
-        // Generate the file URL (this assumes your S3 bucket is publicly accessible)
+        const sanitizedFileName = encodeURIComponent(uniqueFilename).replace(
+          /%20/g,
+          "+"
+        );
         const fileUrl = `https://${Bucket}.s3.${process.env.NEXT_AWS_S3_REGION}.amazonaws.com/${sanitizedFileName}`;
 
         return {
-          name: file.name,
-          url: fileUrl, // The URL for the uploaded file
+          name: uniqueFilename,
+          url: fileUrl,
           uploadStatus: "success",
-          // You can include other S3 response info like the ETag if needed
           etag: uploadResponse.ETag,
         };
       })
     );
 
-    // Return the response with the file URLs and status
     return NextResponse.json(uploadedFilesInfo);
   } catch (error) {
     return NextResponse.json(
@@ -79,7 +87,6 @@ export async function POST(request: NextRequest) {
 // Endpoint to delete a file from the bucket /api/files
 export async function DELETE(request: NextRequest) {
   try {
-    // Extract file key (name or path) from the query string or body
     const url = new URL(request.url);
     const key = url.searchParams.get("key");
 
@@ -90,7 +97,6 @@ export async function DELETE(request: NextRequest) {
       );
     }
 
-    // Delete the file from S3
     const deleteResponse = await s3.send(
       new DeleteObjectCommand({
         Bucket,
