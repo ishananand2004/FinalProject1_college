@@ -1,4 +1,5 @@
 import { array, object, string, z } from "zod";
+import { PhoneNumberSchema } from "./shared.schema";
 
 export const CreateLeadFormSchema = object({
   firstName: string().min(2, {
@@ -8,9 +9,7 @@ export const CreateLeadFormSchema = object({
     message: "Invalid Preferred Location",
   }),
   email: string().email({ message: "Please enter a valid email address." }),
-  phone: string().min(10, {
-    message: "Phone number must be at least 10 digits.",
-  }),
+  phone: PhoneNumberSchema,
   medicalIssue: string().optional(),
   reports: array(string().url()).optional(), // Specify array of File instances
 });
