@@ -22,7 +22,7 @@ export const FeatureWithImage = () => (
   <div className="flex flex-col lg:flex-row gap-10 lg:items-center">
     <div className="flex gap-4 flex-col flex-1">
       <div>
-        <Badge variant={"secondary"}>OUR TEAM</Badge>
+        <Badge variant={"secondary"}>WHY US?</Badge>
       </div>
       <div className="flex gap-2 flex-col lg:pr-5">
         <h2 className="text-xl md:text-3xl lg:text-4xl tracking-tighter lg:max-w-xl font-regular text-left mb-4 ">

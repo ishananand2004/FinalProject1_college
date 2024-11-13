@@ -229,7 +229,7 @@ export function LeadGenerationForm() {
                 <div
                   {...getRootProps()}
                   className={cn(
-                    `flex flex-col items-center justify-center border-dashed border-2 rounded-md bg-[#efefef] min-h-16 p-4 text-gray-500 cursor-pointer`,
+                    `flex flex-col items-center justify-center border-dashed border rounded-md bg-[#efefef] min-h-16 p-4 text-gray-500 cursor-pointer`,
                     isDragActive
                       ? "border-primary"
                       : "border-secondary-foreground/40"
