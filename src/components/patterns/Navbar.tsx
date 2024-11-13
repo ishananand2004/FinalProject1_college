@@ -21,10 +21,10 @@ export const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className="relative">
+    <header className="container mx-auto ">
       <StickyNavbar
         classNames={{
-          scrollTop: "px-20 top-8 relative",
+          scrollTop: "top-8 relative",
           // scrollMiddle: "!px-0",
           // scrollBottom: "!px-0",
         }}
