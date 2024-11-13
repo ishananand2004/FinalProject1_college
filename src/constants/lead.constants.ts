@@ -1,6 +1,6 @@
 import { Option } from "@/types";
 
-export const leadOptions: (Option & {
+export const treatmentCityOptions: (Option & {
   country: "India" | "Thailand" | "Israel";
 })[] = [
   {
@@ -39,7 +39,11 @@ export const leadOptions: (Option & {
   },
   {
     value: "other_israel",
-    label: "Others",
+    label: "Israel",
     country: "Israel",
   },
 ];
+
+export const TREATMENT_CITY_OPTIONS = treatmentCityOptions.map(
+  (el) => el.value
+);

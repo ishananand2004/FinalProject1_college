@@ -25,7 +25,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useDropzone } from "react-dropzone";
 import { useForm } from "react-hook-form";
 import { Combobox } from "../ui/combobox";
-import { leadOptions } from "@/constants/lead.constants";
+import { treatmentCityOptions } from "@/constants/lead.constants";
 
 export function LeadGenerationForm() {
   const form = useForm<ICreateLeadForm>({
@@ -132,13 +132,16 @@ export function LeadGenerationForm() {
                   /> */}
 
                   <Combobox
-                    options={leadOptions}
-                    placeholder="Select a location..."
+                    options={treatmentCityOptions}
+                    placeholder="Preferred Location"
                     renderItem={(option) => (
                       <div className="flex flex-col">
                         <span>{option.label}</span>
                         <span className="text-xs text-muted-foreground">
-                          {(option as (typeof leadOptions)[number]).country}
+                          {
+                            (option as (typeof treatmentCityOptions)[number])
+                              .country
+                          }
                         </span>
                       </div>
                     )}
@@ -216,37 +219,37 @@ export function LeadGenerationForm() {
           )}
         />
 
-          <FormField
-            control={form.control}
-            name="reports"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Reports</FormLabel>
-                <FormControl>
-                  <div
-                    {...getRootProps()}
-                    className={`flex items-center justify-center border rounded-md bg-[#efefef] h-28 p-4 text-gray-500 ${
-                      isDragActive ? "border-pink-500" : "border-transparent"
-                    }`}
-                  >
-                    <input {...getInputProps()} id="reports" />
-                    {isDragActive ? (
-                      <p className="text-rose-600">Drop the files here...</p>
-                    ) : (
-                      <p>
-                        Drag and Drop (or{" "}
-                        <span className="text-sky-400 hover:underline cursor-pointer">
-                          Choose Files
-                        </span>
-                        )
-                      </p>
-                    )}
-                  </div>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+        <FormField
+          control={form.control}
+          name="reports"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Reports</FormLabel>
+              <FormControl>
+                <div
+                  {...getRootProps()}
+                  className={`flex items-center justify-center border rounded-md bg-[#efefef] h-28 p-4 text-gray-500 ${
+                    isDragActive ? "border-pink-500" : "border-transparent"
+                  }`}
+                >
+                  <input {...getInputProps()} id="reports" />
+                  {isDragActive ? (
+                    <p className="text-rose-600">Drop the files here...</p>
+                  ) : (
+                    <p>
+                      Drag and Drop (or{" "}
+                      <span className="text-sky-400 hover:underline cursor-pointer">
+                        Choose Files
+                      </span>
+                      )
+                    </p>
+                  )}
+                </div>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
 
         <Button
           type="submit"
