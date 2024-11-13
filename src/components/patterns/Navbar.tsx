@@ -10,14 +10,14 @@ import StickyNavbar from "./StickyNavbar";
 import { Link as AppLink } from "@/i18n/routing";
 // import StickyNavbar from "react-sticky-navbar";
 
-const navigationItems = [
-  { title: "Home", href: "/" },
-  // { title: "Knowledge", href: "/knowledge" },
-  // { title: "Hospitals", href: "/hospitals" },
-  { title: "Contact Us", href: "/contacts" },
-];
-
 export const Navbar = () => {
+  const navigationItems = [
+    { title: "Home", href: "/" },
+    // { title: "Knowledge", href: "/knowledge" },
+    // { title: "Hospitals", href: "/hospitals" },
+    { title: "Contact Us", href: "/contacts" },
+  ];
+
   const [isOpen, setOpen] = useState(false);
 
   return (
