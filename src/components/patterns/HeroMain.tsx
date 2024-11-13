@@ -14,7 +14,7 @@ export const HeroMain = () => (
               </Badge>
             </div>
             <div className="flex gap-4 flex-col">
-              <h1 className="text-3xl md:text-5xl max-w-lg tracking-tighter !leading-snug text-left font-regular">
+              <h1 className="text-3xl md:text-4xl max-w-lg tracking-tighter !leading-snug text-left font-regular md:font-semibold">
                 Your Health <br />
                 Our Priority <br />
                 Guiding You Every Step

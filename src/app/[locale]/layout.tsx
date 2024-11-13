@@ -6,20 +6,14 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import localFont from "next/font/local";
+import { Nunito } from "next/font/google";
 import { notFound } from "next/navigation";
-import TanstackProviders from "../providers/TanstackProvider";
 import "../globals.css";
+import TanstackProviders from "../providers/TanstackProvider";
 
-const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const nunito = Nunito({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "700", "900"],
 });
 
 export const metadata: Metadata = {
@@ -100,9 +94,7 @@ export default async function LocaleLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="GTM-TQWBN5WH" />
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${nunito.className} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <TanstackProviders>
             <>
