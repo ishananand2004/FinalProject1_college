@@ -1,11 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  
-  CardFooter,
-  
-} from "@/components/ui/card";
+import { Card, CardFooter } from "@/components/ui/card";
 import { Icon } from "@/components/ui/icon";
 
 import Image from "next/image";
@@ -14,7 +9,7 @@ import React from "react";
 const page = () => {
   return (
     <>
-      <div className="w-full h-screen">
+      <div className="w-full">
         <div className="h-[50vh] mt-[5.1%]">
           {/* 1st */}
           <Card className="border  w-[55vw] mx-auto p-3">
@@ -22,7 +17,8 @@ const page = () => {
               <Image
                 className="w-[12vw] mt-3 h-[15vh] shrink-0 object-cover rounded-lg"
                 src="/images/bremen-ost_clinic_bremen-min.jpg"
-                alt="" width={500}
+                alt=""
+                width={500}
                 height={300}
               />
               <div className="flex gap-3 ">
@@ -92,7 +88,8 @@ const page = () => {
               <Image
                 className="w-[12vw] mt-3 h-[15vh] shrink-0 object-cover rounded-lg"
                 src="/images/Asklepios Hospital Barmbek.jpeg"
-                alt="" width={500}
+                alt=""
+                width={500}
                 height={300}
               />
               <div className="flex gap-3 ">
@@ -166,7 +163,8 @@ const page = () => {
               <Image
                 className="w-[12vw] mt-3 h-[15vh] shrink-0 object-cover rounded-lg"
                 src="/images/asklepios_academic_city_hospital_bad_wildungen-min.jpg"
-                alt="" width={500}
+                alt=""
+                width={500}
                 height={300}
               />
               <div className="flex gap-3 ">
@@ -240,7 +238,8 @@ const page = () => {
               <Image
                 className="w-[12vw] mt-3 h-[15vh] shrink-0 object-cover rounded-lg"
                 src="/images/1-min_13.jpg"
-                alt="" width={500}
+                alt=""
+                width={500}
                 height={300}
               />
               <div className="flex gap-3 ">
@@ -314,7 +313,8 @@ const page = () => {
               <Image
                 className="w-[12vw] mt-3 h-[15vh] shrink-0 object-cover rounded-lg"
                 src="/images/asklepios_st._georg_hospital_building-min.jpg"
-                alt="" width={500}
+                alt=""
+                width={500}
                 height={300}
               />
               <div className="flex gap-3 ">
@@ -392,7 +392,8 @@ const page = () => {
               <Image
                 className="w-[12vw] mt-3 h-[15vh] shrink-0 object-cover rounded-lg"
                 src="/images/bremen-ost_clinic_bremen-min.jpg"
-                alt="" width={500}
+                alt=""
+                width={500}
                 height={300}
               />
               <div className="flex gap-3">
@@ -468,7 +469,8 @@ const page = () => {
               <Image
                 className="w-[12vw] mt-3 h-[15vh] shrink-0 object-cover rounded-lg"
                 src="/images/1-min_16.jpg"
-                alt="" width={500}
+                alt=""
+                width={500}
                 height={300}
               />
               <div className="flex gap-3">
