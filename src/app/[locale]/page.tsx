@@ -8,47 +8,9 @@ import {
 } from "@/components/patterns/sections/FeatureGrid";
 import { FeatureWithImage } from "@/components/patterns/sections/FeatureWithImage";
 import { Section } from "@/components/ui/section";
+import { useTranslations } from "next-intl";
 
 import { ComponentProps } from "react";
-
-const features: Feature[] = [
-  {
-    icon: { provider: "phosphor", name: "IdentificationCard" }, // Replace with the actual icon name for Visa Support
-    title: "Visa Support",
-    description:
-      "Assistance with visa applications and documentation to ensure a smooth travel process.",
-  },
-  {
-    icon: { provider: "phosphor", name: "Hospital" }, // Replace with the actual icon name for Treatment
-    title: "Treatment",
-    description:
-      "Coordination with top medical professionals and facilities for personalized treatment plans.",
-  },
-  {
-    icon: { provider: "phosphor", name: "Translate" }, // Replace with the actual icon name for Language Support
-    title: "Language Support",
-    description:
-      "Providing interpreters and language assistance to ensure clear communication.",
-  },
-  {
-    icon: { provider: "phosphor", name: "Bed" }, // Replace with the actual icon name for Local Accommodation
-    title: "Local Accommodation",
-    description:
-      "Arrangement of comfortable and convenient lodging near medical facilities.",
-  },
-  {
-    icon: { provider: "phosphor", name: "AirplaneTakeoff" }, // Replace with the actual icon name for Travel Booking
-    title: "Travel Booking",
-    description:
-      "Management of flight bookings and travel itineraries for a hassle-free journey.",
-  },
-  {
-    icon: { provider: "phosphor", name: "Handshake" }, // Replace with the actual icon name for On Ground Support
-    title: "On Ground Support",
-    description:
-      "Local assistance and support throughout your stay, from transportation to daily needs.",
-  },
-];
 
 const partners: ComponentProps<typeof CarouselLogo>["items"] = [
   {
@@ -90,17 +52,57 @@ const partners: ComponentProps<typeof CarouselLogo>["items"] = [
 ];
 
 export default function Home() {
+  const t = useTranslations("HomePage");
+
+  const features: Feature[] = [
+    {
+      icon: { provider: "phosphor", name: "IdentificationCard" }, // Replace with the actual icon name for Visa Support
+      title: t("Visa_Support"),
+      description: t("Visa_Assistance"),
+    },
+    {
+      icon: { provider: "phosphor", name: "Hospital" }, // Replace with the actual icon name for Treatment
+      title: t("Treatment"),
+      description:
+        t("Treatment_Coordination"),
+    },
+    {
+      icon: { provider: "phosphor", name: "Translate" }, // Replace with the actual icon name for Language Support
+      title: t("Language_Support"),
+      description:
+      t("Language_Assistance"),
+    },
+    {
+      icon: { provider: "phosphor", name: "Bed" }, // Replace with the actual icon name for Local Accommodation
+      title: t("Local_Accommodation"),
+      description:
+        t("Accommodation_Arrangement"),
+    },
+    {
+      icon: { provider: "phosphor", name: "AirplaneTakeoff" }, // Replace with the actual icon name for Travel Booking
+      title: t("Travel_Booking"),
+      description:
+        t("Booking_Management"),
+    },
+    {
+      icon: { provider: "phosphor", name: "Handshake" }, // Replace with the actual icon name for On Ground Support
+      title: t("On_Ground_Support"),
+      description:
+        t("Ground_Assistance"),
+    },
+  ];
+  
   return (
     <>
-      <section className="bg-background">
-        <HeroMain />
-      </section>
+      <Section className="bg-background">
+        <HeroMain/>
+      </Section>
       <div className="container mx-auto">
         <div className="relative -my-20 z-100 px-4 md:px-8 lg:px-16 py-12 bg-white rounded-lg shadow-lg">
           <Section>
             <FeatureGrid
               badge="WHAT WE DO"
-              title="Our unique process makes your Medical Journey Smooth."
+              title={t("Our_Unique_Process")}
               features={features}
             />
           </Section>

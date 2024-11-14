@@ -1,24 +1,33 @@
 import { Badge } from "@/components/ui/badge";
 import { Icon } from "@/components/ui/icon";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
-const features = [
-  {
-    name: "Efficient Journey Planning",
-    icon: { provider: "lucide", name: "Check" },
-  },
-  { name: "Quick Access to Care", icon: { provider: "lucide", name: "Check" } },
-  {
-    name: "Streamlined Communication",
-    icon: { provider: "lucide", name: "Check" },
-  },
-  {
-    name: "Comprehensive Support",
-    icon: { provider: "lucide", name: "Check" },
-  },
-] as const;
 
-export const FeatureWithImage = () => (
+
+export const FeatureWithImage = () => {
+  
+  
+
+  const t = useTranslations("HomePage");
+
+  const features = [
+    {
+      name: t("Efficient_Journey_Planning"),
+      icon: { provider: "lucide", name: "Check" },
+    },
+    { name: t("Quick_Access_To_Care"), 
+      icon: { provider: "lucide", name: "Check" } },
+    {
+      name: t("Streamlined_Communication"),
+      icon: { provider: "lucide", name: "Check" },
+    },
+    {
+      name: t("Comprehensive_Support"),
+      icon: { provider: "lucide", name: "Check" },
+    },
+  ] as const;
+return (
   <div className="flex flex-col lg:flex-row gap-10 lg:items-center">
     <div className="flex gap-4 flex-col flex-1">
       <div>
@@ -26,13 +35,10 @@ export const FeatureWithImage = () => (
       </div>
       <div className="flex gap-2 flex-col lg:pr-5">
         <h2 className="text-xl md:text-3xl lg:text-4xl tracking-tighter lg:max-w-xl font-regular text-left mb-4 ">
-          Save your time by choosing us.
+          {t("Save_Time_With_Us")}
         </h2>
         <p className="text-lg  leading-normal tracking-tight text-muted-foreground text-left">
-          At Caremedico, we understand that navigating healthcare abroad can be
-          complex and time-consuming. By choosing us as your medical tourism
-          partner, you streamline the entire process, allowing you to focus on
-          what truly matters—your health and recovery.
+          {t("Caremedico_Description")}
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
           {features.map((feature, index) => (
@@ -57,4 +63,6 @@ export const FeatureWithImage = () => (
       />
     </div>
   </div>
-);
+)
+  
+};

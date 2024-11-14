@@ -32,9 +32,9 @@ export function TermsAndConditions() {
                   <CardTitle className="text-3xl">Terms and Conditions</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4 text-gray-500">
-                  <p>
+                <p>
                   Welcome to CareMedico Medtech Private Limited ("CareMedico," "we," "us," or "our"). By using our services, including visiting our website at https://caremedico.com or engaging with us in any way, you agree to these Terms and Conditions ("Terms"). Please read these Terms carefully, as they govern your use of our services and your relationship with CareMedico. If you do not agree with any part of these Terms, you should not use our services.
-                  </p>                  
+                </p>                  
 
                 </CardContent>
               </Card>

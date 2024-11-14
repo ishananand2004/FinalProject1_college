@@ -8,15 +8,17 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { LeadGenerationForm } from "@/components/forms/LeadGenerationForm";
+import { useTranslations } from "next-intl";
 // (props) ye tha important h
 export default function Contacts() {
+  const t = useTranslations("Contacts");
   return (
     <>
       <div className="relative bg-blue-100 h-[50vh] py-20 ">
         <div className="container mx-auto text-center flex items-center justify-center h-full">
           <div className="pt-8">
             <h1 className="text-5xl font-semibold text-gray-800">
-              Get in Touch
+              {t("Get")}
             </h1>
             <div className="flex justify-center items-center mt-5 gap-x-2">
               <h1 className="text-gray-600">Home</h1>
@@ -63,11 +65,8 @@ export default function Contacts() {
         </div>
 
         <div>
-          <h1 className="font-bold  text-4xl text-primary">
-            Convinced yet? Let&apos;s make{" "}
-          </h1>
-          <h1 className="font-bold  text-4xl text-primary mt-2">
-            something great together.
+        <h1 className="font-bold  text-4xl leading-normal tracking-tighter text-primary">
+            {t("Convinced")}
           </h1>
 
           <div className="mt-10 flex gap-3">
@@ -103,11 +102,10 @@ export default function Contacts() {
       <div>
         <div className="flex justify-center mt-10 px-8 flex-col items-center">
           <h1 className="text-4xl text-primary font-semibold">
-            Drop Us a Line
+            {t("Drop")}
           </h1>
           <h1 className="mt-5 text-xl text-gray-600 mx-20">
-            Reach out to us for any healthcare related queries and we will get
-            back to you shortly.
+            {t("Reach_Out")}
           </h1>
 
           <div className="w-[80vw] mt-5 mb-[6%] mx-auto p-6 border-none  sm:max-w-lg lg:max-w-2xl">

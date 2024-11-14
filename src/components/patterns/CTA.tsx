@@ -2,16 +2,20 @@ import { Section } from "@/components/ui/section";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { Icon } from "../ui/icon";
+import { useTranslations } from "next-intl";
+
 
 export function CTA() {
+
+  const t = useTranslations("HomePage");
+  
   return (
     <Section
       style={{ backgroundImage: `url(${"/images/caremedico-bg-map.webp"})` }}
     >
       <div className="flex flex-col gap-2 text-center my-10 lg:my-20">
         <h3 className="text-3xl md:text-4xl tracking-tighter mx-auto max-w-2xl font-regular">
-          Trusted by over 5000+ patients. Join them and experience top-tier
-          treatment in India.
+          {t("Trusted_By_5000_Patients")}
         </h3>
         <div className="py-4">
           <Link
