@@ -14,7 +14,7 @@ const page = () => {
         {hospitaldeatils.map((hospital,index)=>(
           <Card key={index} className="w-full max-w-6xl	container mx-auto mt-4 p-3">
           <CardContent>
-            <div className="flex gap-[10%]">
+            <div className="flex gap-[10%] justify-evenly">
               <div className="flex gap-4">
                 <Image
                   className="max-w-48	 mt-3  shrink-0 object-cover rounded-lg"
