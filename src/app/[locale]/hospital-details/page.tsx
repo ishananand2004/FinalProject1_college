@@ -19,11 +19,15 @@ import { Icon } from "@/components/ui/icon";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { hospitaldeatils } from "@/hospital_detailsdata";
 
 const page = () => {
+  
   return (
     <>
-      <div className="mt-[5.1%]">
+    {hospitaldeatils.map((hospital,index)=>(
+      <Card key={index} className="container mx-auto">
+      <div className="">
         <div className="flex p-[3%] justify-evenly ">
           <div className="">
             <div className="flex gap-1 items-center">
@@ -38,7 +42,7 @@ const page = () => {
               </h1>
             </div>
             <h1 className="text-3xl font-semibold mt-2">
-              Fortis Hospital, Bangalore (Cunningham Road)
+              {hospital.name}
             </h1>
             <div className="flex items-center gap-1 mt-3">
               {/* star hai */}
@@ -75,7 +79,7 @@ const page = () => {
                   className="text-yellow-500"
                 />
               </div>
-              <div className="text-base ">5(Rating)</div>
+              <div className="text-base ">{hospital.rating}(Rating)</div>
             </div>
             <div className="flex gap-4">
               <div className="mt-2 flex gap-1 items-center">
@@ -86,7 +90,7 @@ const page = () => {
                   size={"1.2vw"}
                   className=""
                 />
-                <h1>Bangalore, India</h1>
+                <h1>{hospital.location}</h1>
               </div>
               <div className="mt-2 flex gap-1 items-center">
                 {/*  */}
@@ -96,7 +100,7 @@ const page = () => {
                   size={"1.2vw"}
                   className=""
                 />
-                <h1>Number of Beds: 284</h1>
+                <h1>Number of Beds: {hospital.numberOfBeds}</h1>
               </div>
 
               <div className="mt-2 flex gap-1 items-center">
@@ -107,7 +111,7 @@ const page = () => {
                   size={"1.2vw"}
                   className=""
                 />
-                <h1>Establish In: 2006</h1>
+                <h1>Establish In: {hospital.establishedIn}</h1>
               </div>
               <div className="mt-2 flex gap-1 items-center">
                 {/*  */}
@@ -117,7 +121,7 @@ const page = () => {
                   size={"1.2vw"}
                   className=""
                 />
-                <h1>Accreditations:NABH, JCI</h1>
+                <h1>Accreditations:{hospital.accreditations}</h1>
               </div>
             </div>
           </div>
@@ -142,7 +146,7 @@ const page = () => {
             <CarouselItem className="basis-1/3 rounded-lg">
               <Image
                 className="rounded-md"
-                src="/images/fortis_hospital_cunningham_road_2-min.jpg"
+                src={hospital.hospitalImages[0]}
                 alt=""
                 width={500}
                 height={300}
@@ -151,7 +155,7 @@ const page = () => {
             <CarouselItem className="basis-1/3 rounded-lg">
               <Image
                 className="rounded-md"
-                src="/images/fortis_hospital_cunningham_road_2photo.jpg"
+                src={hospital.hospitalImages[1]}
                 alt=""
                 width={500}
                 height={300}
@@ -160,7 +164,7 @@ const page = () => {
             <CarouselItem className="basis-1/3 rounded-lg">
               <Image
                 className="rounded-md"
-                src="/images/fortis_hospital_cunningham_road_3 photo.jpg"
+                src={hospital.hospitalImages[2]}
                 alt=""
                 width={500}
                 height={300}
@@ -169,7 +173,7 @@ const page = () => {
             <CarouselItem className="basis-1/3 rounded-lg">
               <Image
                 className="rounded-md"
-                src="/images/fortis_hospital_cunningham_road_4 photo.jpg"
+                src={hospital.hospitalImages[3]}
                 alt=""
                 width={500}
                 height={300}
@@ -178,7 +182,7 @@ const page = () => {
             <CarouselItem className="basis-1/3 rounded-lg">
               <Image
                 className="rounded-md"
-                src="/images/fortis_hospital_cunningham_road_6 photo.jpg"
+                src={hospital.hospitalImages[4]}
                 alt=""
                 width={500}
                 height={300}
@@ -187,7 +191,7 @@ const page = () => {
             <CarouselItem className="basis-1/3 rounded-lg">
               <Image
                 className="rounded-md"
-                src="/images/fortis_hospital_cunningham_road5 photo.jpg"
+                src={hospital.hospitalImages[5]}
                 alt=""
                 width={500}
                 height={300}
@@ -199,31 +203,6 @@ const page = () => {
         </Carousel>
       </div>
 
-      {/* <Card className="mt-10 w-[70%] mx-auto">
-        <CardHeader className="">
-          <CardTitle className="flex justify-center">
-            <h1 className="text-2xl text-gray-600 ">Hospital Information</h1>
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="flex justify-between">
-          <div>
-            <h1 className="font-semibold text-pink-400 text-xl">
-              location: "Bangalore, India
-            </h1>
-            <h1 className="font-semibold text-pink-400 text-xl mt-1">
-              Number of Beds: 284
-            </h1>
-          </div>
-          <div>
-            <h1 className="font-semibold text-pink-400 text-xl mt-1">
-              EstablishedIn": 2006
-            </h1>
-            <h1 className="font-semibold text-pink-400 text-xl mt-1">
-              Accreditations: ["NABH", "JCI"],
-            </h1>
-          </div>
-        </CardContent>
-      </Card> */}
       <div className="flex justify-center gap-4 mt-6">
         <Button variant="destructive" size="default">
           Book Appointment
@@ -235,69 +214,6 @@ const page = () => {
           </div>
         </Button>
       </div>
-
-      {/* yeha react markdown bnaega */}
-
-      {/* <Card className="w-[70%] mt-10 mx-auto ">
-        <CardHeader>
-          <CardTitle className="text-2xl text-center text-gray-600">
-            Book Appointment at Apollo Hospital
-          </CardTitle>
-        </CardHeader>
-        <div className="flex justify-evenly items-center p-3">
-          <div className="px-10 bg-pink-200 w-fit  rounded-lg py-4 ">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="border-none">
-                Select Department
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel></DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  Cardiology and Cardiac Surgery
-                </DropdownMenuItem>
-                <DropdownMenuItem>ENT Surgery</DropdownMenuItem>
-                <DropdownMenuItem>Gastroenterology</DropdownMenuItem>
-                <DropdownMenuItem>Gynecology</DropdownMenuItem>
-                <DropdownMenuItem>Hepatology</DropdownMenuItem>
-                <DropdownMenuItem>Oncology and Oncosurgery</DropdownMenuItem>
-                <DropdownMenuItem>Orthopedics</DropdownMenuItem>
-                <DropdownMenuItem>Pediatric Cardiology</DropdownMenuItem>
-                <DropdownMenuItem>
-                  Pediatrics and Pediatric Surgery
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-          <div className="px-10 bg-pink-200 w-fit mx-10 rounded-lg py-4 ">
-            <DropdownMenu>
-              <DropdownMenuTrigger className="border-none">
-                View All Doctors
-              </DropdownMenuTrigger>
-              <DropdownMenuContent>
-                <DropdownMenuLabel></DropdownMenuLabel>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  Cardiology and Cardiac Surgery
-                </DropdownMenuItem>
-                <DropdownMenuItem>ENT Surgery</DropdownMenuItem>
-                <DropdownMenuItem>Gastroenterology</DropdownMenuItem>
-                <DropdownMenuItem>Gynecology</DropdownMenuItem>
-                <DropdownMenuItem>Hepatology</DropdownMenuItem>
-                <DropdownMenuItem>Oncology and Oncosurgery</DropdownMenuItem>
-                <DropdownMenuItem>Orthopedics</DropdownMenuItem>
-                <DropdownMenuItem>Pediatric Cardiology</DropdownMenuItem>
-                <DropdownMenuItem>
-                  Pediatrics and Pediatric Surgery
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-          <Button size="lg" className="w-[15%]">
-            Search
-          </Button>
-        </div>
-      </Card> */}
 
       <Card className="mt-3 w-[60%] mx-auto">
         <CardHeader>
@@ -316,11 +232,12 @@ const page = () => {
             <p className="text-base">
               Apollo, Bangalore, is the leading healthcare facility with 60
               departments and Centers of Excellence in areas such as Heart,
-              Neuro, Robotics, ENT, Ortho, Nephrology, Pediatrics, Dermatology,
-              Cancer Care, Spine, Plastic Surgery, Vascular Surgery,
-              Gastroenterology, Colorectal Surgery, Critical Care, Andrology,
-              Liver Sciences, Emergency, Preventive Health, Sports Medicine,
-              Transplants, Bariatric Surgery, Pulmonology, and Nuclear Medicine.
+              Neuro, Robotics, ENT, Ortho, Nephrology, Pediatrics,
+              Dermatology, Cancer Care, Spine, Plastic Surgery, Vascular
+              Surgery, Gastroenterology, Colorectal Surgery, Critical Care,
+              Andrology, Liver Sciences, Emergency, Preventive Health, Sports
+              Medicine, Transplants, Bariatric Surgery, Pulmonology, and
+              Nuclear Medicine.
             </p>
           </CardContent>
 
@@ -333,9 +250,9 @@ const page = () => {
             />
             <p>
               Doctors and staff perform a wide range of services daily,
-              including CT scans, MRIs, Cardiac Surgeries, Dialysis procedures,
-              and organ transplants, showcasing their commitment to
-              comprehensive healthcare.
+              including CT scans, MRIs, Cardiac Surgeries, Dialysis
+              procedures, and organ transplants, showcasing their commitment
+              to comprehensive healthcare.
             </p>
           </CardContent>
           <CardContent className="px-6 flex gap-3">
@@ -359,8 +276,8 @@ const page = () => {
               className="text-green-400 translate-y-[-20%]"
             />
             <p className="text-base">
-              Nephrology is a key focus area, with over 10,000 patients treated
-              annually for kidney problems.
+              Nephrology is a key focus area, with over 10,000 patients
+              treated annually for kidney problems.
             </p>
           </CardContent>
 
@@ -628,8 +545,7 @@ const page = () => {
                   size="1em"
                 />
                 <h1 className="text-sm sm:text-base md:text-lg">
-                  Street: 14 Cunningham Road near Sigma Central Mall, Vasanth
-                  Nagar, Bangalore, India
+                {hospital.address.city} {hospital.address.country} 
                 </h1>
               </div>
             </div>
@@ -642,39 +558,9 @@ const page = () => {
             </Link>
           </CardFooter>
         </Card>
-
-        {/* <Card className=" mt-6 mb-6 w-[60%] mx-auto">
-          <CardHeader className="text-gray-600">
-            <CardTitle className="text-3xl px-4 flex justify-start">
-              <h1 className="translate-y-[30%]">Address</h1>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="px-3 flex justify-start">
-              <div className="font-semibold gap-1 flex justify-start">
-              <Icon
-                provider="lucide"
-                name="MapPin"
-                className="text-black-500"
-                size={"1.4vw"}
-              />
-                <h1>
-                  Street: 14 Cunningham Road near Sigma Central Mall, Vasanth
-                  Nagar,Bangalore,India
-                </h1>
-              </div>
-              
-            </div>
-          </CardContent>
-          <CardFooter className="translate-y-[-20%] px-8">
-          <Link href="/">
-                <Button className="flex justify-start">
-                  <h1>Direction</h1>
-                </Button>
-              </Link>
-          </CardFooter>
-        </Card> */}
       </div>
+    </Card>
+    ))}
     </>
   );
 };

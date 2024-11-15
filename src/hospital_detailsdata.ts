@@ -1,4 +1,57 @@
 export const hospitaldeatils=[
+  
+  {
+    "name": "Asklepios Hospital Barmbek",
+    "hospitalImages": [
+      "https://d1ea147o02h74h.cloudfront.net/hospitals/asklepios_hospital_barmbek_hamburg-min.jpeg",
+      "https://d1ea147o02h74h.cloudfront.net/hospitals/inner-hospital-min.jpg",
+      "https://d1ea147o02h74h.cloudfront.net/hospitals/reception-min_29.jpg",
+      "https://d1ea147o02h74h.cloudfront.net/hospitals/waiting-area-min_23.jpg",
+      "https://d1ea147o02h74h.cloudfront.net/hospitals/mri_scan-min_0.jpg",
+      "https://d1ea147o02h74h.cloudfront.net/hospitals/room1-min_1.jpg",
+      "https://d1ea147o02h74h.cloudfront.net/hospitals/room-min_4.jpg"
+    ],
+    "about": "Founded in 2005, Asklepios Hospital Barmbek is a part of the Asklepios medical group, a major network of private clinics in Germany. The hospital is known for its state-of-the-art medical standards and specializes in various medical fields, particularly treatment for liver diseases and advanced quality medical tourism services.",
+    "location": "Hamburg, Germany",
+    "rating": 3.6,
+    "numberOfBeds": 620,
+    "specialty": "Super Specialty",
+    "establishedIn": 2015,
+    "accreditations": ["NABH", "EFQM"],
+    "departments": [
+      "Cardiology",
+      "Cosmetic and Plastic Surgery",
+      "ENT Surgery",
+      "Gastroenterology",
+      "Gynecology",
+      "Hematology",
+      "Neurology and Neurosurgery",
+      "Oncology and Oncosurgery",
+      "Orthopedics",
+      "Pediatric Cardiology",
+      "Pediatrics and Pediatric Surgery",
+      "Urology",
+      "Vascular Surgery"
+    ],
+    "facilities": [
+      "Free Wifi",
+      "Private rooms",
+      "Laundry",
+      "Family accommodation",
+      "Health insurance coordination",
+      "Medical travel insurance",
+      "Restaurant",
+      "Spa and wellness",
+      "Airport pickup"
+    ],
+    "address": {
+      "street": "Rubenkamp 220",
+      "city": "Hamburg",
+      "state": "Hamburg",
+      "zipCode": "22307",
+      "country": "Germany"
+    }
+  },
   {
     "name": "Academic Hospital Bogenhausen",
     "hospitalImages": [
@@ -75,58 +128,6 @@ export const hospitaldeatils=[
       "city": "Munich",
       "state": "",
       "zipCode": "81925",
-      "country": "Germany"
-    }
-  },
-  {
-    "name": "Asklepios Hospital Barmbek",
-    "hospitalImages": [
-      "https://d1ea147o02h74h.cloudfront.net/hospitals/asklepios_hospital_barmbek_hamburg-min.jpeg",
-      "https://d1ea147o02h74h.cloudfront.net/hospitals/inner-hospital-min.jpg",
-      "https://d1ea147o02h74h.cloudfront.net/hospitals/reception-min_29.jpg",
-      "https://d1ea147o02h74h.cloudfront.net/hospitals/waiting-area-min_23.jpg",
-      "https://d1ea147o02h74h.cloudfront.net/hospitals/mri_scan-min_0.jpg",
-      "https://d1ea147o02h74h.cloudfront.net/hospitals/room1-min_1.jpg",
-      "https://d1ea147o02h74h.cloudfront.net/hospitals/room-min_4.jpg"
-    ],
-    "about": "Founded in 2005, Asklepios Hospital Barmbek is a part of the Asklepios medical group, a major network of private clinics in Germany. The hospital is known for its state-of-the-art medical standards and specializes in various medical fields, particularly treatment for liver diseases and advanced quality medical tourism services.",
-    "location": "Hamburg, Germany",
-    "rating": 3.6,
-    "numberOfBeds": 620,
-    "specialty": "Super Specialty",
-    "establishedIn": 2015,
-    "accreditations": ["NABH", "EFQM"],
-    "departments": [
-      "Cardiology",
-      "Cosmetic and Plastic Surgery",
-      "ENT Surgery",
-      "Gastroenterology",
-      "Gynecology",
-      "Hematology",
-      "Neurology and Neurosurgery",
-      "Oncology and Oncosurgery",
-      "Orthopedics",
-      "Pediatric Cardiology",
-      "Pediatrics and Pediatric Surgery",
-      "Urology",
-      "Vascular Surgery"
-    ],
-    "facilities": [
-      "Free Wifi",
-      "Private rooms",
-      "Laundry",
-      "Family accommodation",
-      "Health insurance coordination",
-      "Medical travel insurance",
-      "Restaurant",
-      "Spa and wellness",
-      "Airport pickup"
-    ],
-    "address": {
-      "street": "Rubenkamp 220",
-      "city": "Hamburg",
-      "state": "Hamburg",
-      "zipCode": "22307",
       "country": "Germany"
     }
   },
