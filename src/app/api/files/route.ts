@@ -83,7 +83,6 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-
 // Endpoint to delete a file from the bucket /api/files
 export async function DELETE(request: NextRequest) {
   try {

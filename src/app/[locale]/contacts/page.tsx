@@ -9,6 +9,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { LeadGenerationForm } from "@/components/forms/LeadGenerationForm";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 // (props) ye tha important h
 export default function Contacts() {
   const t = useTranslations("Contacts");
@@ -21,9 +22,9 @@ export default function Contacts() {
               {t("Get")}
             </h1>
             <div className="flex justify-center items-center mt-5 gap-x-2">
-              <h1 className="text-gray-600">Home</h1>
+              <Link href="/" className="text-gray-600 hover:underline">Home</Link>
               <FaChevronRight className=" text-gray-600" size={"0.9vw"} />
-              <h1 className="text-gray-600">Contact</h1>
+              <Link href="" className="text-gray-600 hover:underline">Contact</Link>
             </div>
           </div>
         </div>
